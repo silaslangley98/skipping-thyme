@@ -1,0 +1,10 @@
+{
+	"name": "gardensApp",
+	"dependencies" : {
+		"bootstrap" : "latest",
+		"font-awesome" : "latest",
+		"angular" : "latest",
+		"angular-ui-router" : "latest",
+    	"angular-ui-bootstrap-bower" : "latest" 
+	}
+}

@@ -1,0 +1,33 @@
+/* RESETS */
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;  
+}
+
+body, header, h1, h2, h3, nav, footer, ul, li {
+	margin: 0;
+	padding: 0;	  
+}
+
+body{
+	background-color: #F3FAB6;
+}
+
+header{
+	height: auto;
+	width: 100%;
+	padding: 1.5%;
+	background-color: #005A31;
+	color: #CBE32D;
+}
+
+h1{
+	font-size: 3.5em;
+}
+
+.labelWidth {
+	width: 8.5%;
+}
+
