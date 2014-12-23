@@ -11,6 +11,8 @@ body, header, h1, h2, h3, nav, footer, ul, li {
 	padding: 0;	  
 }
 
+/* MAIN TAGS */
+
 body{
 	background-color: #F3FAB6;
 }
@@ -23,11 +25,202 @@ header{
 	color: #CBE32D;
 }
 
-h1{
-	font-size: 3.5em;
+h1 {
+	font-size: 1.5em;
 }
 
-.labelWidth {
-	width: 8.5%;
+hr {
+	margin: 5px 0 0 0 !important;	
+	border-top: 1px solid rgb(0,102,0) !important;
 }
+
+/* STANDARD CLASSES */
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+
+/* HOME VIEW STYLES */
+
+input {
+	text-align: center;
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+#firstView {
+	order: 1;
+	margin-top: 3px;	
+}
+
+#secondView {
+	order: 2;
+	margin-top: 3px;
+	height: 400px;
+}
+
+/* Search Fields */
+
+.form-height {
+	height: 28px;
+}
+
+.form-group {
+	margin-bottom: 2px;
+	width: 100%;
+}
+
+.form-control {
+	display: inline-block;
+}
+
+.labelStyle {
+	width: 35%;
+	padding: 0 1% 0 0;
+	margin: 0;
+	font-size: 1em;
+}
+
+.inputWidth {
+	width: 63%;
+}
+
+.resetButton {
+	background-color: #005A31;
+	color: #fff;
+}
+
+.resetButton:hover {
+	background-color: #C9302C;
+	color: #fff;
+}
+
+/* Plant Gallery */
+
+#plantList{
+	margin: 0 auto 30px auto;
+}
+
+.plantCard {
+	display: none;
+	height: 300px;
+	width: 200px;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 0 30px;
+}
+
+.plantCard img{
+	width: 100%;
+	height: 220px;
+}
+
+.plantHeader{
+	height: 40px;
+	width: 100%;
+	border-bottom: 1px solid black;
+	padding: 5px 10px;
+	font-size: 1.25em;
+	line-height: 2.1em;
+	border-radius: 5px 5px 0 0;
+}
+
+.plantHeader p {
+	margin-bottom: 0;
+	height: 30px;
+}
+
+.veggieColor{
+	background-color: #669933;
+}
+
+.herbColor{
+	background-color: #6BAE63;
+}
+
+.flowerColor{
+	background-color: #A89ACB;
+}
+
+.fruitColor{
+	background-color: #F78D51;
+}
+
+
+/* MEDIA QUERIES */
+
+@media (min-width: 795px) {
+
+	h1 {
+		font-size: 3.5em;
+	}
+
+	.homeContainer {
+		flex-direction: row;
+	}
+
+	#firstView {
+		flex: 1;
+		margin-top: 10px;
+	}
+
+	#secondView {
+		flex: 2.1;
+		margin: 10px 0 0 10px;
+	}
+
+	.form-height {
+		height: 34px;
+	}
+
+	.form-group {
+		margin-bottom: 10px;
+		width: 100%;
+	}
+
+	.labelStyle {
+		padding: 0 5% 0 0;
+		font-size: 1.1em;
+	}
+
+	#plantGallery table {
+		display: none;
+	}
+
+	.plantCard {
+		display: block;
+	}
+
+}
+
+@media (min-width: 1000px) {
+
+	#secondView {
+		flex: 2.5;
+	}
+
+	#plantList {
+		width: 33%;
+	}
+
+}
+
+@media (min-width: 1100px) {
+
+	#secondView {
+		flex: 3;
+	}
+
+	
+
+}
+
 

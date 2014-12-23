@@ -1,46 +1,44 @@
-<div>
-    <div id="leftColumn">
+<div class="homeContainer">
+    <div id="firstView">
       <form name = "searchForm" role="form">
         
-        <div class="form-group form-inline">
-          <label for="nameSearch" class="control-label labelWidth"><span>Search by </span>Name</label>
-          <input type="text" class = "form-control" ng-model="productSearch.name">
+        <div class="form-group form-horizontal form-height">
+          <label for="nameSearch" class="control-label col-sm-2 labelStyle">Search by</label>
+          <input type="text" class = "form-control col-sm-2 inputWidth input-sm" placeholder="Name" ng-model="productSearch.name">
         </div>
 
-        <div class="form-group form-inline">
-          <label for="typeSearch" class="control-label labelWidth"><span>Search by </span>Type</label>
-          <input type="text" class = "form-control" ng-model="productSearch.type">
+        <div class="form-group form-horizontal form-height">
+          <label for="typeSearch" class="control-label col-sm-2 labelStyle">Search by</label>
+          <input type="text" class = "form-control col-sm-2 inputWidth input-sm" placeholder="Type" ng-model="productSearch.type">
         </div>
 
-        <div>
-          <button type="button" ><span>Search by </span>Family</button>
-          <input type="text" ng-model="productSearch.family">
-        </div>
-        
-        <div>
-          <button type="button"><span>Search by </span>Foliage</button>
-          <input type="text" ng-model="productSearch.foliage">
-        </div>
-       
-        <div>
-          <button type="button"><span>Search by </span>Flower Color</button>
-          <input type="text" ng-model="productSearch.color">
-        </div>
-    
-        <div>
-          <button type="button"><span>Search by </span>Amount of Sun</button>
-          <input type="text" ng-model="productSearch.amountOfSun">
+        <div class="form-group form-horizontal form-height">
+          <label for="familySearch" class="control-label col-sm-2 labelStyle">Search by</label>
+          <input type="text" class = "form-control col-sm-2 inputWidth input-sm" placeholder="Family" ng-model="productSearch.family">
         </div>
 
-        <div>
-          <button type="button" ng-click="reset()" ng-show="productSearch.name.length || productSearch.type.length || productSearch.family.length || productSearch.foliage.length || productSearch.color.length || productSearch.amountOfSun.length">
-            Reset Search
-          </button>
+        <div class="form-group form-horizontal form-height">
+          <label for="foliageSearch" class="control-label col-sm-2 labelStyle">Search by</label>
+          <input type="text" class = "form-control col-sm-2 inputWidth input-sm" placeholder="Foliage" ng-model="productSearch.foliage">
         </div>
-            
+
+        <div class="form-group form-horizontal form-height">
+          <label for="colorSearch" class="control-label col-sm-2 labelStyle">Search by</label>
+          <input type="text" class = "form-control col-sm-2 inputWidth input-sm" placeholder="Flower Color" ng-model="productSearch.color">
+        </div>
+
+        <div class="form-group form-horizontal form-height">
+          <label for="sunAmountSearch" class="control-label col-sm-2 labelStyle">Search by</label>
+          <input type="text" class = "form-control col-sm-2 inputWidth input-sm" placeholder="Amount of Sun" ng-model="productSearch.amountOfSun">
+        </div>
+
+        <div class="form-group form-horizontal form-height" ng-show="productSearch.name.length || productSearch.type.length || productSearch.family.length || productSearch.foliage.length || productSearch.color.length || productSearch.amountOfSun.length">
+          <label for="resetButton" class="control-label col-sm-2 labelStyle">Start Over</label>
+          <button type="button" class="btn resetButton col-sm-2 inputWidth btn-sm" ng-click="reset()">Reset</button>          
+        </div>
+
       </form>
 
-      <br>
       <hr>
       
  <!-- <div ng-show = "browserSizeBig()">
@@ -51,6 +49,64 @@
         <ga-view-cart-button></ga-view-cart-button>
       </div>
   -->
+    </div>
+
+    <div id = "secondView">
+      <div id="searchShow" ng-show="productSearch.name.length || productSearch.type.length || productSearch.family.length || productSearch.foliage.length || productSearch.color.length || productSearch.amountOfSun.length ">
+            
+        <p>
+          Showing results for: 
+            <strong ng-bind="productSearch.name">  </strong>
+            <strong ng-bind="productSearch.type">  </strong>
+            <strong ng-bind="productSearch.family">  </strong>
+            <strong ng-bind="productSearch.foliage">  </strong>
+            <strong ng-bind="productSearch.color">  </strong>
+            <strong ng-bind="productSearch.amountOfSun">  </strong>           
+        </p>
+       
+      </div>
+
+      <div id="plantGallery">
+        
+        <table class="table table-hover table-condensed">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>&nbsp</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="plant in plants | filter:productSearch | orderBy:'name'">
+              <td ng-bind="plant.name"></td>
+              <td ng-bind="plant.price | currency"></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <ul id="plantList" class="left" ng-repeat="plant in plants | filter:productSearch | orderBy:'name'">         
+          <li class="plantCard">
+            <div class="plantHeader" ng-class="{veggieColor: plant.type=='vegetable', herbColor: plant.type=='herb', flowerColor: plant.type=='flower', fruitColor: plant.type=='fruit'}">
+              <p ng-bind="plant.name" class="left"></p>
+              <p ng-bind="plant.price | currency" class="right"></p>
+
+            </div>
+            
+            <img ng-src="{{plant.thumbnail}}" alt = "{{plant.title}}">
+
+            <add-cart-button plant = "plant"></add-cart-button>
+          
+          </li>
+          
+         <!-- <div class = "viewButtonBelowCard" ng-show = "browserSizeSmall()">
+            <ga-view-cart-button></ga-view-cart-button>
+          </div> -->
+
+        </ul>
+
+      </div>
+
     </div>
 
 </div>
