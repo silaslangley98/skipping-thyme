@@ -41,14 +41,14 @@
 
       <hr>
       
- <!-- <div ng-show = "browserSizeBig()">
-        <ga-cart></ga-cart>
+      <div class = "displayWhenBig">
+        <shopping-cart plant = "plant"></shopping-cart>
       </div>
      
       <div ng-hide = "browserSizeBig() || browserSizeSmall()">
         <ga-view-cart-button></ga-view-cart-button>
       </div>
-  -->
+
     </div>
 
     <div id = "secondView">
@@ -73,6 +73,7 @@
             <tr>
               <th>Name</th>
               <th>Price</th>
+              <th></th>
               <th>&nbsp</th>
             </tr>
           </thead>
@@ -80,7 +81,8 @@
             <tr ng-repeat="plant in plants | filter:productSearch | orderBy:'name'">
               <td ng-bind="plant.name"></td>
               <td ng-bind="plant.price | currency"></td>
-              <td></td>
+              <td><add-cart-button plant = "plant"></add-cart-button></td>
+              <td><product-details-button plant="plant"><product-details-button></td>
             </tr>
           </tbody>
         </table>

@@ -25,7 +25,6 @@
                 } else {
                     items[item.guid].quantity += 1;
                     console.log(items[item.guid].quantity);
-                    console.log(items[item.guid].family);
                 }
 			},
  

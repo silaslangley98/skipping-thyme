@@ -1,0 +1,50 @@
+<div ng-show = "getItemCount()">
+	<div class = "row">
+		<div class="col-md-10">
+			<table class="table table-hover table-condensed">
+				<thead>
+					<tr>
+						<th class = "text-center">Plant</th>
+						<th class = "text-center">Quantity</th>
+						<th class = "text-center">Price</th>
+						<th class = "text-center">Total</th>
+						<th>&nbsp;</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in items">
+						<td class="col-sm-1 col-md-1 text-center" ng-bind="item.name"></td>
+						<td class="col-sm-1 col-md-1 text-center" ng-bind="item.quantity"></td>
+						<td class="col-sm-1 col-md-1 text-center">{{item.price | currency}}</td>
+						<td class="col-sm-1 col-md-1 text-center">{{item.price * item.quantity | currency}}</td>
+						<td class="col-sm-1 col-md-1">
+                            <button type="button" class="btn btn-danger btn-xs btn-block" ng-click="removeItem(item.guid)">
+                                <i class="glyphicon glyphicon-remove"></i> Remove
+                            </button>
+                        </td>
+					</tr>
+					
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+						
+						<td class="col-sm-1 col-md-1 text-center">
+							<strong>Total</strong>
+						</td>
+						<td class="col-sm-1 col-md-1 text-center">
+							<strong>{{cartTotal() | currency}}</strong>
+						</td>
+						<td class="col-sm-1 col-md-1">
+							<button type="button" class="btn btn-danger btn-xs btn-block" ng-click="emptyCart(); resetCart()">
+						        <i class="glyphicon glyphicon-remove"></i> Empty Cart
+						    </button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+			
+    
+       
+</div>

@@ -1,0 +1,8 @@
+<div class="row" ng-show="getItemCount()">
+    <div class="col-sm-4 col-sm-offset-8 text-right">
+        <div class="well">
+            <i class="glyphicon glyphicon-shopping-cart"></i> Subtotal: {{ getCartTotal() | currency }} - {{ getItemCount() }} items
+            <a class="btn btn-success" ui-sref="cart" role="button">view cart</a>
+        </div>
+    </div>
+</div>

@@ -32,6 +32,7 @@ h1 {
 hr {
 	margin: 5px 0 0 0 !important;	
 	border-top: 1px solid rgb(0,102,0) !important;
+	width: 100%;
 }
 
 /* STANDARD CLASSES */
@@ -42,6 +43,10 @@ hr {
 
 .right{
 	float: right;
+}
+
+.displayWhenBig {
+	display: none;
 }
 
 
@@ -58,7 +63,7 @@ input {
 
 #firstView {
 	order: 1;
-	margin-top: 3px;	
+	margin: 3px 20px 0 0;	
 }
 
 #secondView {
@@ -101,6 +106,12 @@ input {
 .resetButton:hover {
 	background-color: #C9302C;
 	color: #fff;
+}
+
+/* Cart */
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>thead>tr>td, .table>tbody>tr>td {
+	vertical-align: middle;
 }
 
 /* Plant Gallery */
@@ -160,7 +171,6 @@ input {
 	border-radius: 0;
 }
 
-
 /* MEDIA QUERIES */
 
 @media (min-width: 795px) {
@@ -205,6 +215,13 @@ input {
 		display: block;
 	}
 
+}
+
+@media (min-width: 830px) {
+
+	.displayWhenBig {
+		display: block;
+	}
 }
 
 @media (min-width: 1000px) {

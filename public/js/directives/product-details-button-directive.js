@@ -13,7 +13,7 @@
 			replace: true,
 			templateUrl: 'templates/product-details-button.html',
 			link: function(scope, elem, attrs) {
- 
+ 				
 			}
 
 		};
