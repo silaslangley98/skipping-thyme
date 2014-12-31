@@ -22,6 +22,8 @@
 
 		$scope.addItem = CartService.addItem;
 
+		$scope.getCartTotal = CartService.getCartTotal;
+
 		$scope.cartDisplay = CartService.cartDisplay;
 
 		$scope.master = {};

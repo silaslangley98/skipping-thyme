@@ -44,10 +44,6 @@
       <div class = "displayWhenBig">
         <shopping-cart plant = "plant"></shopping-cart>
       </div>
-     
-      <div ng-hide = "browserSizeBig() || browserSizeSmall()">
-        <ga-view-cart-button></ga-view-cart-button>
-      </div>
 
     </div>
 
@@ -73,8 +69,8 @@
             <tr>
               <th>Name</th>
               <th>Price</th>
-              <th></th>
-              <th>&nbsp</th>
+              <th ng-show="getItemCount()">Total: {{ getCartTotal() | currency }}</th>
+              <th><view-cart-button></view-cart-button></th>
             </tr>
           </thead>
           <tbody>

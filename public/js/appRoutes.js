@@ -13,6 +13,12 @@
 				url: '/',
 				controller: "HomeController",
 				templateUrl: "views/home.html"
+			})
+
+			.state('cart', {
+				url: '/cart',
+				controller: "CartController",			
+				templateUrl: "templates/cart-template.html"
 			});
 
 	});
