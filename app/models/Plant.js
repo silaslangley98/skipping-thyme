@@ -1,8 +1,7 @@
 var mongoose = require('mongoose');
 
 var plantSchema = new mongoose.Schema({
-    
-    guid: Number,
+    guid: String,
 	price: Number,
 	picture: String,
 	thumbnail: String,

@@ -6,6 +6,7 @@
 		return {
 
 			scope: {
+				
 				plant: "="
 			},
 

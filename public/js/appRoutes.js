@@ -18,8 +18,20 @@
 			.state('cart', {
 				url: '/cart',
 				controller: "CartController",			
-				templateUrl: "templates/cart-template.html"
-			});
+				templateUrl: "views/cart-view.html"
+			})
+
+			.state('plant', {
+                url: '/plant/:id',
+                controller: 'PlantDetailController',
+                templateUrl: 'views/detail.html'
+            })
+
+            .state('login', {
+                url: '/login',
+                controller: 'LoginController',
+                templateUrl: 'views/login.html'
+            });
 
 	});
 	

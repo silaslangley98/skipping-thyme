@@ -18,7 +18,7 @@
 						<td class="col-sm-1 col-md-1 text-center">{{item.price | currency}}</td>
 						<td class="col-sm-1 col-md-1 text-center">{{item.price * item.quantity | currency}}</td>
 						<td class="col-sm-1 col-md-1">
-                            <button type="button" class="btn btn-danger btn-xs btn-block" ng-click="removeItem(item.guid)">
+                            <button type="button" class="btn btn-danger btn-resize btn-radius btn-longer" ng-click="removeItem(item.guid)">
                                 <i class="glyphicon glyphicon-remove"></i> Remove
                             </button>
                         </td>
@@ -35,7 +35,7 @@
 							<strong>{{cartTotal() | currency}}</strong>
 						</td>
 						<td class="col-sm-1 col-md-1">
-							<button type="button" class="btn btn-danger btn-xs btn-block" ng-click="emptyCart(); resetCart()">
+							<button type="button" class="btn btn-danger btn-resize btn-radius btn-longer" ng-click="emptyCart(); resetCart()">
 						        <i class="glyphicon glyphicon-remove"></i> Empty Cart
 						    </button>
 						</td>

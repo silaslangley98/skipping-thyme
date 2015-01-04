@@ -1,0 +1,18 @@
+<div class = "homeContainer">
+  	
+        <div id = "plantImage">
+            <img ng-src="{{ plant.picture }}" alt = "{{plant.name}}"/>
+        </div>
+
+        <div id = "plantDescription">
+            <div class="alert alert-danger" ng-show="plant.inventory == 0"><strong>This item is currently unavailable</strong></div>
+            <h2 ng-bind="plant.name"></h2>
+            <p>Price: <span ng-bind="plant.price | currency"></span></p>
+            <p ng-bind="plant.description"></p>
+            <p ng-bind="'Inventory: ' + plant.inventory"></p>
+            <div class = "smaller">
+                <add-cart-button plant="plant"></add-cart-button>
+            </div>
+        </div>
+
+</div>

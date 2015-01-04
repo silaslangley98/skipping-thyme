@@ -11,7 +11,6 @@
 		return {
 
 			getItems: function() {
-				console.log(items);
                 return items;
 			},
 

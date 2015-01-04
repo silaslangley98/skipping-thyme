@@ -1,10 +1,13 @@
 {
-	"name": "gardensApp",
-	"dependencies" : {
-		"bootstrap" : "latest",
-		"font-awesome" : "latest",
-		"angular" : "latest",
-		"angular-ui-router" : "latest",
-    	"angular-ui-bootstrap-bower" : "latest" 
-	}
+  "name": "gardensApp",
+  "dependencies": {
+    "bootstrap": "latest",
+    "font-awesome": "latest",
+    "angular": "latest",
+    "angular-ui-router": "latest",
+    "angular-ui-bootstrap-bower": "latest"
+  },
+  "resolutions": {
+    "angular": "1.3.8"
+  }
 }

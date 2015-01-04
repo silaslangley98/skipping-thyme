@@ -11,23 +11,24 @@
 			},
 			restrict: 'E',
 			replace: true,
-			templateUrl: 'templates/cart-template.html',
-			link: function(scope, elem, attr) {
+			controller: function ($scope, CartService) {
 
-				scope.items = CartService.getItems();
+				$scope.items = CartService.getItems();
  
- 				scope.getItemCount = CartService.getItemCount;
+ 				$scope.getItemCount = CartService.getItemCount;
 
- 				scope.removeItem = CartService.removeItem;
+ 				$scope.removeItem = CartService.removeItem;
 
- 				scope.cartTotal = CartService.getCartTotal;
+ 				$scope.cartTotal = CartService.getCartTotal;
 
- 				scope.emptyCart = CartService.emptyCart;
+ 				$scope.emptyCart = CartService.emptyCart;
 
- 				scope.resetCart = function () {
-				    scope.items = CartService.getItems();
+ 				$scope.resetCart = function () {
+				    $scope.items = CartService.getItems();
 				};
-
+			},
+			templateUrl: 'templates/cart-template.html',
+			link: function(scope, elem, attr) {			
 			}
 		};
 	});

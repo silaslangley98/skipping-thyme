@@ -1,4 +1,3 @@
-// Require mongoose dependency
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 
@@ -14,7 +13,6 @@ var userSchema = new mongoose.Schema({
 
 var User = mongoose.model('User', userSchema);
 
-/* To add later
 userSchema.pre('save', function(next) {
     var user = this;
     if (!user.isModified('password')) return next();
@@ -27,5 +25,3 @@ userSchema.pre('save', function(next) {
         });
     });
 });
-
-*/

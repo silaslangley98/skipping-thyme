@@ -5,7 +5,7 @@
 
 	app.controller('HomeController', function($scope, CartService, PlantService){
 
-		PlantService.getPlants().then
+		/* PlantService.getPlants().then
 
 			(function(results){
 
@@ -16,7 +16,12 @@
 
 				function(results){
 				console.log("Error: " + results.data);
-			});
+			}); */
+
+
+        var items = PlantService.query();
+
+        $scope.plants = items;
 
 		$scope.getItemCount = CartService.getItemCount;
 

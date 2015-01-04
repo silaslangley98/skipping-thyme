@@ -94,13 +94,9 @@
             <img ng-src="{{plant.thumbnail}}" alt = "{{plant.title}}">
 
             <add-cart-button plant = "plant"></add-cart-button>
-            <product-details-button plant="plant"><product-details-button>
+            <product-details-button plant = "plant" plant-id="{{plant.guid}}"><product-details-button>
           
           </li>
-          
-         <!-- <div class = "viewButtonBelowCard" ng-show = "browserSizeSmall()">
-            <ga-view-cart-button></ga-view-cart-button>
-          </div> -->
 
         </ul>
 
