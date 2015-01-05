@@ -38,7 +38,7 @@
     	};
   
   		$scope.reset();
-
+  		
   	});
 
 })(window.angular);

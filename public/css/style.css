@@ -48,6 +48,14 @@ hr {
 	float: right;
 }
 
+.layout {
+	width: 97%;
+}
+
+.topMargin {
+	margin: 20px auto;
+}
+
 .displayWhenBig {
 	display: none;
 }
@@ -81,10 +89,17 @@ hr {
 .active {
 	background-color: #005A31;
 	text-decoration: underline;
-	/*border-bottom: 2px solid #fff;*/
 	color: #fff !important;
 }
 
+.panel-left {
+	width: 100%;
+}
+
+.panel-right {
+	width: 55%;
+	margin: 0 0 5px 1.5%;
+}
 /* NAV BAR */
 
 .navbar {
@@ -254,6 +269,30 @@ input {
 	width: 100%;
 }
 
+/* ABOUT PAGE */
+
+/* CONTACT PAGE */
+
+#commentBox {
+	width: 100%;
+}
+
+textarea {
+	width: 100%;
+}
+
+#mapBox {
+	height: 500px;
+}
+
+#commentRequest {
+	margin-top: 6px;
+}
+
+.angular-google-map-container { 
+	height: 500px;
+}
+
 /* MEDIA QUERIES */
 
 @media (min-width: 795px) {
@@ -337,6 +376,10 @@ input {
 
 	.displayWhenBig {
 		display: block;
+	}
+
+	.panel-left {
+		width: 40%;
 	}
 }
 

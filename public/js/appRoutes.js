@@ -11,14 +11,26 @@
 		$stateProvider
 			.state('home', {
 				url: '/',
-				controller: "HomeController",
-				templateUrl: "views/home.html"
+				controller: 'HomeController',
+				templateUrl: 'views/home.html'
 			})
 
 			.state('cart', {
 				url: '/cart',
-				controller: "CartController",			
-				templateUrl: "views/cart-view.html"
+				controller: 'CartController',			
+				templateUrl: 'views/cart-view.html'
+			})
+
+			.state('about', {
+				url: '/about',
+				controller: 'AboutController',
+				templateUrl: 'views/about.html'
+			})
+
+			.state('contact', {
+				url: '/contact',
+				controller: 'ContactController',
+				templateUrl: 'views/contact.html'
 			})
 
 			.state('plant', {

@@ -1,0 +1,31 @@
+<div class = "layout topMargin">
+	<div class="panel panel-default">
+	  <div class="panel-body">
+		<div class="panel panel-default panel-left left">
+		  <div class="panel-heading">Contact Us</div>
+		  <div class="panel-body">
+		    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat. Aenean sodales tellus diam, non placerat nulla aliquet eget. Pellentesque eu dignissim ex, sit amet faucibus arcu. Praesent mollis ex vel hendrerit suscipit. Aliquam purus diam, pulvinar id ligula ut, ornare mollis nibh. Fusce consectetur purus eros.</p>
+		  </div>
+
+		  <ul class="list-group">
+		    <li class="list-group-item">Email: samplename@gmail.com</li>
+		    <li class="list-group-item">Phone: 111-111-1111</li>
+		    <li class="list-group-item">Address: 1111 N. Main St.<br>Fresno, CA 93700</li>
+
+		    <li id="commentBox" class="list-group-item">
+		    	<form action="mailto:samplename@gmail.com" method="post" enctype="text/plain" name="commentForm">
+		    		<div>
+				    	<p id="commentRequest" class="left">Please send us a comment</p>
+				    	<button type="submit" class="btn btn-success right">Submit</button>
+			    	</div>
+			  		<textarea rows="4" class="form-control" placeholder="Comment here."></textarea>
+			  	</form>
+		    </li>
+		  </ul>
+		</div>
+		<div id="mapBox" class="displayWhenBig panel-right right">
+			<ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+		</div>
+	  </div>
+	</div>
+</div>

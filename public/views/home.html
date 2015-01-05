@@ -4,17 +4,17 @@
         
         <div class="form-group form-horizontal form-height">
           <label for="nameSearch" class="control-label col-sm-2 labelStyle">Search by</label>
-          <input type="text" class = "form-control col-sm-2 inputWidth input-sm" placeholder="Name" ng-model="productSearch.name">
+          <input type="text" class = "form-control col-sm-2 inputWidth input-sm" placeholder="Name" ng-model="productSearch.name" typeahead="plant as plant.name for plant in plants | filter:$viewValue" typeahead-focus-first="false">
         </div>
 
         <div class="form-group form-horizontal form-height">
           <label for="typeSearch" class="control-label col-sm-2 labelStyle">Search by</label>
-          <input type="text" class = "form-control col-sm-2 inputWidth input-sm" placeholder="Type" ng-model="productSearch.type">
+          <input type="text" class = "form-control col-sm-2 inputWidth input-sm" placeholder="Type" ng-model="productSearch.type" tooltip="Try: flower, fruit, herb, vegetable"  tooltip-trigger="focus" tooltip-placement="bottom">
         </div>
 
         <div class="form-group form-horizontal form-height">
           <label for="familySearch" class="control-label col-sm-2 labelStyle">Search by</label>
-          <input type="text" class = "form-control col-sm-2 inputWidth input-sm" placeholder="Family" ng-model="productSearch.family">
+          <input type="text" class = "form-control col-sm-2 inputWidth input-sm" placeholder="Family" ng-model="productSearch.family" tooltip="Try: bedstraw, gourd, heather, mint, nightshade, rose, sunflower"  tooltip-trigger="focus" tooltip-placement="bottom">
         </div>
 
         <div class="form-group form-horizontal form-height">
@@ -29,7 +29,7 @@
 
         <div class="form-group form-horizontal form-height">
           <label for="sunAmountSearch" class="control-label col-sm-2 labelStyle">Search by</label>
-          <input type="text" class = "form-control col-sm-2 inputWidth input-sm" placeholder="Amount of Sun" ng-model="productSearch.amountOfSun">
+          <input type="text" class = "form-control col-sm-2 inputWidth input-sm" placeholder="Amount of Sun" ng-model="productSearch.amountOfSun" tooltip="Try: full, minimal, partial"  tooltip-trigger="focus" tooltip-placement="bottom">
         </div>
 
         <div class="form-group form-horizontal form-height" ng-show="productSearch.name.length || productSearch.type.length || productSearch.family.length || productSearch.foliage.length || productSearch.color.length || productSearch.amountOfSun.length">
