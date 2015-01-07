@@ -78,6 +78,21 @@ module.exports = function(app) {
             });
         });
 
+    // signup API route
+    router.route('/register')
+        .post(function(req, res, next) {
+
+            var User = mongoose.model('User');
+            var user = new User({
+                email: req.body.email,
+                password: req.body.password
+            });
+            user.save(function(err) {
+                if (err) return next(err);
+                res.send(200);
+            });
+        });
+
     // logout API route
     router.route('/logout')
         .get(function(req, res, next) {
@@ -86,6 +101,7 @@ module.exports = function(app) {
         });
 
     // login API route
+
     router.route('/login')
         .post(passport.authenticate('local'), function(req, res) {
             if (req.isAuthenticated()) {

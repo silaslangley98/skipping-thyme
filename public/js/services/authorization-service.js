@@ -15,12 +15,17 @@
                     .$promise
                     .then(
                         function(data) {
+                            console.log(user);
+                            console.log(data);
                             $rootScope.currentUser = data;
-
                             success();
                         },
                         error
                     );
+            },
+
+            signup: function(user, success, error) {
+                return API.register.save(user).$promise.then(success, error);
             },
 
             logout: function(success) {

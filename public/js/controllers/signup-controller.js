@@ -3,18 +3,16 @@
 	
 	var app = angular.module('gardensApp');
 
-	app.controller('LoginController', function($scope, $state, $timeout, AuthService){
-
+	app.controller('SignUpController', function($scope, $state, $timeout, AuthService){
 		function successCallback() {
-
             $scope.alert = {
                 type: 'success',
-                message: 'You have successfully logged in.'
+                message: 'Your account has been created.'
             };
 
             $timeout(function() {
 
-                $state.go('home');
+                $state.go('login');
 
                 $scope.alert = undefined;
 
@@ -24,7 +22,7 @@
         function errorCallback() {
             $scope.alert = {
                 type: 'danger',
-                message: 'Invalid username and/or password'
+                message: 'There was an error creating your account. Please try again.'
             };
 
             $timeout(function() {
@@ -33,15 +31,14 @@
             }, 3000);
         }
 
-        $scope.login = function() {
+        $scope.signup = function() {
 
-            AuthService.login({
-                email: $scope.email,
+            AuthService.signup({
+                email   : $scope.email,
                 password: $scope.password
             }, successCallback, errorCallback);
-
         };
+		
+	});
 
-    });
-    
 })(window.angular);

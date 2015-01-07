@@ -26,6 +26,7 @@ header{
 
 h1 {
 	font-size: 1.5em;
+	line-height: inherit;
 }
 
 h2 {
@@ -52,6 +53,10 @@ hr {
 	width: 97%;
 }
 
+.bold {
+	font-weight: 700;
+}
+
 .topMargin {
 	margin: 20px auto;
 }
@@ -61,7 +66,7 @@ hr {
 }
 
 .pad {
-	padding: 1.5%;
+	padding: 0 1.5% 1.5%; 
 }
 
 .btn-longer {
@@ -100,6 +105,7 @@ hr {
 	width: 55%;
 	margin: 0 0 5px 1.5%;
 }
+
 /* NAV BAR */
 
 .navbar {
@@ -121,12 +127,19 @@ hr {
 
 .navbar-default .navbar-nav>li>a {
 	color: #CBE32D;
-	font-size: 23px;
+	font-size: 20px;
 	font-weight: 900;
+	line-height: inherit;
+	padding-top: 6px;
 }
+
 
 .navbar-default .navbar-nav>li>a:hover {
 	color: #fff;
+}
+
+#loggedin {
+	padding-right: 15px;
 }
 
 /* HOME VIEW STYLES */
@@ -172,6 +185,10 @@ input {
 	display: inline-block;
 }
 
+.form-horizontal .control-label {
+	text-align: center;
+}
+
 .labelStyle {
 	width: 35%;
 	padding: 0 1% 0 0;
@@ -197,6 +214,10 @@ input {
 
 .table>thead>tr>th, .table>tbody>tr>th, .table>thead>tr>td, .table>tbody>tr>td {
 	vertical-align: middle;
+}
+
+.tableBorderBottom {
+	border-bottom: 2px solid #ddd;
 }
 
 /* Plant Gallery */
@@ -295,11 +316,15 @@ textarea {
 
 /* MEDIA QUERIES */
 
-@media (min-width: 795px) {
+@media (min-width: 400px) {
 
 	h1 {
-		font-size: 3.5em;
+		font-size: 2em;
 	}
+
+}
+
+@media (min-width: 813px) {
 
 	h2 {
 		font-size: 2.5em;
@@ -374,8 +399,20 @@ textarea {
 
 @media (min-width: 830px) {
 
+	header {
+		min-height: 90px;
+	}
+
+	h1 {
+		font-size: 2.5em;
+	}
+
 	.displayWhenBig {
 		display: block;
+	}
+
+	.navbar-default .navbar-nav>li>a {
+		padding-top: 15px;
 	}
 
 	.panel-left {
@@ -385,6 +422,10 @@ textarea {
 
 @media (min-width: 1000px) {
 
+	header {
+		min-height: 105px;
+	}
+
 	#secondView {
 		flex: 2.5;
 	}
@@ -393,6 +434,18 @@ textarea {
 		width: 33%;
 	}
 
+}
+
+@media (min-width: 1020px) {
+
+	h1 {
+		font-size: 3.5em;
+	}
+
+	.navbar-default .navbar-nav>li>a {
+		font-size: 23px;
+		padding-top: 27px;
+	}
 }
 
 @media (min-width: 1100px) {

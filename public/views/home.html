@@ -69,8 +69,8 @@
             <tr>
               <th>Name</th>
               <th>Price</th>
-              <th ng-show="getItemCount()">Total: {{ getCartTotal() | currency }}</th>
-              <th><view-cart-button></view-cart-button></th>
+              <th><span ng-show="getItemCount()">Total: {{ getCartTotal() | currency }}</span></th>
+              <th class="tableBorderBottom"><view-cart-button></view-cart-button></th>
             </tr>
           </thead>
           <tbody>

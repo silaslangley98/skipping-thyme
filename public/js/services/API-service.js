@@ -13,6 +13,8 @@
 
             user: $resource('/api/users/:id'),
 
+            register: $resource('/api/register'),
+
             login: $resource('/api/login'),
 
             logout: $resource('/api/logout')

@@ -39,6 +39,12 @@
                 templateUrl: 'views/detail.html'
             })
 
+            .state('signup', {
+                url: '/signup',
+                controller: 'SignUpController',
+                templateUrl: 'views/signup.html'
+            })
+
             .state('login', {
                 url: '/login',
                 controller: 'LoginController',

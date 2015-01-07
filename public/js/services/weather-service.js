@@ -25,10 +25,8 @@
 						method: 'JSONP',
 						url: forecastUrl + city + url2
 					}).success(function(data) {
-						console.log(data);
 						weather.temp.high = data.list[0].temp.max;
 						weather.temp.low = data.list[0].temp.min;
-						console.log(weather.temp.high);
 					});
 
 				return weather;

@@ -1,19 +1,19 @@
 // MODULES
 
-var express			= require('express'),
-	session      	= require('express-session'),
-	fs          	= require('fs'),
-	path        	= require('path'),
-	mongoose    	= require('mongoose'),
-	bodyParser		= require('body-parser'),
-	cookieParser	= require('cookie-parser'),
-	logger			= require('morgan'),
-	bcrypt			= require('bcrypt-nodejs'),
-	uriUtil      	= require('mongodb-uri'),
-	http         	= require('http'),
-	passport     	= require('passport'),
-    LocalStrategy 	= require('passport-local').Strategy,
-	app 			= express();
+var express      = require('express'),
+    app          = express(),
+    path         = require('path'),
+    fs           = require('fs'),
+    logger       = require('morgan'),
+    mongoose     = require('mongoose'),
+    uriUtil      = require('mongodb-uri'),
+    cookieParser = require('cookie-parser'),
+    bodyParser   = require('body-parser'),
+    passport     = require('passport'),
+    session      = require('express-session'),
+    LocalStrategy = require('passport-local').Strategy,
+    bcrypt        = require('bcrypt-nodejs');
+    http         = require('http');
 
 require('./app/models/User.js');
 
@@ -36,7 +36,7 @@ app.use(cookieParser());
 app.use(express.static(__dirname + '/public'));
 
 app.use(session({ 
-    secret: 'blackwidow straw',
+    secret: 'SECRET',
     saveUninitialized: true,
     resave: true }));   
 app.use(passport.initialize());
