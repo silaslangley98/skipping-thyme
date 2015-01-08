@@ -16,6 +16,7 @@ var express      = require('express'),
     http         = require('http');
 
 require('./app/models/User.js');
+require('./app/models/Plant.js');
 
 // CONFIGURATION
 
@@ -82,6 +83,7 @@ passport.use('local', new LocalStrategy({ usernameField: 'email' }, function(ema
 
 // ROUTES
 
+require('./app/admin-routes.js')(app);
 require('./app/routes.js')(app);
 
 // START APP

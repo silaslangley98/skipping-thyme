@@ -106,6 +106,10 @@ hr {
 	margin: 0 0 5px 1.5%;
 }
 
+.jumbotron {
+	padding: 0;
+}
+
 /* NAV BAR */
 
 .navbar {

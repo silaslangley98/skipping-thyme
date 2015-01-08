@@ -11,7 +11,11 @@
 
             plant: $resource('/api/plants/:id'),
 
-            user: $resource('/api/users/:id'),
+            item: $resource('/api/admin/plants/:id'),
+
+            users: $resource('/api/admin/users'),
+
+            user: $resource('/api/admin/users/:id'),
 
             register: $resource('/api/register'),
 

@@ -9,10 +9,8 @@ module.exports = function(app) {
 
 	/* ======================= MIDDLEWARE ====================== */
 
-    /* TO ADD LATER 
     function checkRole(role) {
         return function(req, res, next) {
-             //if (req.user.isAdmin == true
             if (req.user && req.user[role]) {
                 next();
             } else {
@@ -21,14 +19,10 @@ module.exports = function(app) {
         }
     }
 
-	*/
-
 /* ======================= REST ROUTES ====================== */
     
-/* TO ADD LATER
     router.route('/*')
         .all(checkRole('isAdmin'));
-*/
 
 // Plants API route
     router.route('/plants')
@@ -56,22 +50,40 @@ module.exports = function(app) {
 	                res.send(plant);
 	            });
 
-	        })
-
-	        .delete(function(req, res) {
-
-	            Plant.findByIdAndRemove(req.params.id, function(err, response) {
-	                if(err) res.send(err);
-
-	                res.send(response);
-	            });
-
 	        });
+
+	    router.route('/plants/:id')
+        .get(function(req, res) {
+            Plant.findOne({id: req.params.id}, function(err, plant) {
+                if (err)
+                    res.send(err);
+
+                res.send(plant);
+            });
+        })
+
+        .post(function(req, res) {
+
+            Plant.findByIdAndUpdate(req.params.id, req.body, function(err, plant) {
+                if(err) res.send(err);
+
+                res.send(plant);
+            });
+        })
+               
+        .delete(function(req, res) {
+
+            Plant.findByIdAndRemove(req.params.id, function(err, response) {
+                if(err) res.send(err);
+
+                res.send(response);
+            });
+
+        });
 
 	    router.route('/users')
 	        .get(function(req, res) {
 	        
-
 	            User.find(req.query, function(err, users) {
 	                
 	                if (err) res.send(err);
@@ -81,7 +93,7 @@ module.exports = function(app) {
 	        })
 	        .post(function(req, res) {
 
-		       User.create(req.body, function(err, user) {
+		        User.create(req.body, function(err, user) {
 
 	                if(err) res.send(err);
 

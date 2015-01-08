@@ -49,6 +49,24 @@
                 url: '/login',
                 controller: 'LoginController',
                 templateUrl: 'views/login.html'
+            })
+
+            .state('plants', {
+            	url: '/plants',
+            	controller: 'PlantsController',
+            	templateUrl: 'views/admin/plants.html'
+            })
+
+            .state('users', {
+            	url: '/users',
+            	controller: 'UsersController',
+            	templateUrl: 'views/admin/users.html'
+            })
+
+            .state('editusers', {
+            	url: '/users/:id',
+            	controller: 'UserFormController',
+            	templateUrl: 'views/admin/userform.html'
             });
 
 	});
