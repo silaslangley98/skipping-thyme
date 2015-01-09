@@ -21,7 +21,9 @@ header{
 	height: auto;
 	width: 100%;
 	background-color: #005A31;
-	color: #CBE32D;
+	color: #3399FF;
+	/* #CBE32D; */
+	border-bottom: 2px solid #000;
 }
 
 h1 {
@@ -93,7 +95,7 @@ hr {
 
 .active {
 	background-color: #005A31;
-	text-decoration: underline;
+	text-decoration: underline !important;
 	color: #fff !important;
 }
 
@@ -130,7 +132,7 @@ hr {
 }
 
 .navbar-default .navbar-nav>li>a {
-	color: #CBE32D;
+	color: #3399FF;;
 	font-size: 20px;
 	font-weight: 900;
 	line-height: inherit;
@@ -261,11 +263,13 @@ input {
 }
 
 .veggieColor{
-	background-color: #669933;
+	background-color: #005A31;
+	/*#669933;*/
 }
 
 .herbColor{
-	background-color: #6BAE63;
+	background-color: #5Cb85C;
+	/*#6BAE63;*/
 }
 
 .flowerColor{

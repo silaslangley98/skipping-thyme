@@ -28,7 +28,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="plant in plants">
+					<tr ng-repeat="plant in plants | orderBy:'name'">
 						<td>{{plant.name}}</td>
 						<td>{{plant.price | currency}}</td>
 						<td>{{plant.type}}</td>
