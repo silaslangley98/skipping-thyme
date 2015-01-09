@@ -42,7 +42,7 @@
                 email: $scope.user.email,
                 isAdmin: $scope.user.isAdmin,
                 isActive: $scope.user.isActive
-            });
+            }, deleteSuccess);
         };
 
     });

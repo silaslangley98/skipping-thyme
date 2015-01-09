@@ -8,8 +8,7 @@
                     <div class="alert alert-{{alert.type}}" ng-if="alert" ng-bind="alert.message"></div>
 
                     <div class="form-group" ng-class="{'has-error': signupForm.email.$invalid && signupForm.email.$dirty, 'has-success': signupForm.email.$valid}">
-                        <input class="form-control input-lg" type="email" id="email" ng-model="email"
-                               name="email" placeholder="Email" required autofocus>
+                        <input class="form-control input-lg" type="email" id="email" ng-model="email" name="email" placeholder="Email" required autofocus>
                     </div>
 
                     <div class="help-block text-danger" ng-if="signupForm.email.$dirty"

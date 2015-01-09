@@ -1,15 +1,17 @@
-<div class="jumbotron">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12 col-lg-12">
-				<h1 class="h1">
-					Admin <small>Manage Plants</small></h1>
-			</div>
+<div class="container topMargin">
+	<h2 class="pull-left">Plant List</h2>
+	<form class="pull-right inline-form" ng-if="currentUser.isAdmin" method="post" ng-submit="addPlant()" name="addPlantForm">
+		<div class="input-group">
+  			<span id="addPlant" class="input-group-addon" id="basic-addon1">Add plant</span>
+  			<input type="text" class="form-control" placeholder="name" aria-describedby="basic-addon1" ng-model="formInfo.name" name="name" required autofocus>
+  			<span class="input-group-btn">  				
+        		<button class="btn btn-success" type="submit"><i class="glyphicon glyphicon-plus"></i>Submit!</button>
+      		</span>
 		</div>
-	</div>
-</div>
+	</form>
 
-<div class="container">
+	<div ng-if="alert" class="alert alert-{{alert.type}}" ng-if="alert" ng-bind="alert.message"></div>
+
 	<div class="row">
 		<div class="col-md-12">
 			<table class="table table-hover">
@@ -22,19 +24,19 @@
 						<th>Foliage</th>
 						<th>Amount of Sun</th>
 						<th>Inventory</th>
-						<th>Description</th>
+						<th ng-if="currentUser.isAdmin">&nbsp</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="plant in plants">
 						<td>{{plant.name}}</td>
-						<td>{{plant.price}}</td>
+						<td>{{plant.price | currency}}</td>
 						<td>{{plant.type}}</td>
 						<td>{{plant.family}}</td>
 						<td>{{plant.foliage}}</td>
 						<td>{{plant.amountOfSun}}</td>
-						<td>{{product.isFeatured}}</td>
-						<td>{{plant.description}}</td>
+						<td>{{plant.inventory}}</td>
+						<th ng-if="currentUser.isAdmin"><edit-plant-button plant="plant"></edit-plant-button></th>
 					</tr>
 				</tbody>		
 			</table>

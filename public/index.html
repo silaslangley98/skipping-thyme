@@ -39,7 +39,7 @@
                 <div class="collapse navbar-collapse" id="bs-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a ui-sref-active="active" ui-sref="home">home</a></li>
-                        <li><a ui-sref-active="active" ui-sref="cart">cart</a></li>
+                        <li><a ng-show="getItemCount()" ui-sref-active="active" ui-sref="cart">cart</a></li>
                         <li><a ui-sref-active="active" ui-sref="about">about</a></li>
                         <li><a ui-sref-active="active" ui-sref="contact">contact</a></li>
                                               
@@ -83,22 +83,26 @@
     <script type="text/javascript" src="js/controllers/login-controller.js"></script>
     <script type="text/javascript" src="js/controllers/main-controller.js"></script>
     <script type="text/javascript" src="js/controllers/plant-detail-controller.js"></script>
+    <script type="text/javascript" src="js/controllers/plant-form-controller.js"></script>
     <script type="text/javascript" src="js/controllers/plants-controller.js"></script>
     <script type="text/javascript" src="js/controllers/signup-controller.js"></script>
     <script type="text/javascript" src="js/controllers/user-form-controller.js"></script>
     <script type="text/javascript" src="js/controllers/users-controller.js"></script>
     <script type="text/javascript" src="js/controllers/weather-controller.js"></script>
 
-	<script type="text/javascript" src="js/services/API-service.js"></script>
-    <script type="text/javascript" src="js/services/authorization-service.js"></script>
-    <script type="text/javascript" src="js/services/cart-service.js"></script>    
-	<script type="text/javascript" src="js/services/plant-service.js"></script>
-    <script type="text/javascript" src="js/services/weather-service.js"></script>
-
 	<script type="text/javascript" src = "js/directives/add-cart-button-directive.js"></script>
+    <script type="text/javascript" src = "js/directives/edit-plant-button-directive.js"></script>
+    <script type="text/javascript" src = "js/directives/edit-user-button-directive.js"></script>
 	<script type="text/javascript" src = "js/directives/product-details-button-directive.js"></script>
 	<script type="text/javascript" src = "js/directives/shopping-cart-directive.js"></script>
     <script type="text/javascript" src = "js/directives/view-cart-button-directive.js"></script>
+
+    <script type="text/javascript" src="js/services/add-plant-service.js"></script>
+    <script type="text/javascript" src="js/services/API-service.js"></script>
+    <script type="text/javascript" src="js/services/authorization-service.js"></script>
+    <script type="text/javascript" src="js/services/cart-service.js"></script>    
+    <script type="text/javascript" src="js/services/plant-service.js"></script>
+    <script type="text/javascript" src="js/services/weather-service.js"></script>
 
 </body>
 </html>

@@ -24,7 +24,6 @@ module.exports = function(app) {
     router.route('/*')
         .all(checkRole('isAdmin'));
 
-// Plants API route
     router.route('/plants')
         .get(function(req, res) {
             var filter = {
@@ -53,33 +52,44 @@ module.exports = function(app) {
 	        });
 
 	    router.route('/plants/:id')
-        .get(function(req, res) {
-            Plant.findOne({id: req.params.id}, function(err, plant) {
-                if (err)
-                    res.send(err);
+	        .get(function(req, res) {
+	            Plant.findOne({_id: req.params.id}, function(err, plant) {
+	                if (err)
+	                    res.send(err);
 
-                res.send(plant);
-            });
-        })
+	                res.send(plant);
+	            });
+	        })
 
-        .post(function(req, res) {
+	        .post(function(req, res) {
 
-            Plant.findByIdAndUpdate(req.params.id, req.body, function(err, plant) {
-                if(err) res.send(err);
+	            Plant.findByIdAndUpdate(req.params.id, req.body, function(err, plant) {
+	                if(err) res.send(err);
 
-                res.send(plant);
-            });
-        })
-               
-        .delete(function(req, res) {
+	                res.send(plant);
+	            });
+	        })
+	               
+	        .delete(function(req, res) {
 
-            Plant.findByIdAndRemove(req.params.id, function(err, response) {
-                if(err) res.send(err);
+	            Plant.findByIdAndRemove(req.params.id, function(err, response) {
+	                if(err) res.send(err);
 
-                res.send(response);
-            });
+	                res.send(response);
+	            });
 
-        });
+	        });
+
+	    router.route('/add-plant')
+	        .post(function(req, res, next) {
+	            var plant = new Plant({
+	                name: req.body.name
+	            });
+	            plant.save(function(err) {
+	                if (err) return next(err);
+	                res.send(200);
+	            });
+	        });
 
 	    router.route('/users')
 	        .get(function(req, res) {
@@ -91,6 +101,7 @@ module.exports = function(app) {
 	                res.send(users);
 	            });
 	        })
+
 	        .post(function(req, res) {
 
 		        User.create(req.body, function(err, user) {

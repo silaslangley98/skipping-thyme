@@ -57,6 +57,12 @@
             	templateUrl: 'views/admin/plants.html'
             })
 
+            .state('editplants', {
+            	url: '/plants/:id',
+            	controller: 'PlantFormController',
+            	templateUrl: 'views/admin/plant-form.html'
+            })
+
             .state('users', {
             	url: '/users',
             	controller: 'UsersController',

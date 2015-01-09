@@ -318,7 +318,30 @@ textarea {
 	height: 500px;
 }
 
+/* PLANTS PAGE */
+
+#addPlant {
+	background-color: #D9EDF7;
+}
+
 /* MEDIA QUERIES */
+
+@media (min-width: 400px) {
+
+	h1 {
+		font-size: 2em;
+	}
+
+}
+
+@media (min-width: 450px) {
+
+	.inline-form {
+		max-width: 300px;
+		margin-top: -6px !important;
+	}
+
+}
 
 @media (min-width: 400px) {
 
@@ -399,6 +422,10 @@ textarea {
 		border-radius: 0;
 	}
 
+	.inline-form {
+		margin-top: 6px !important;
+	}
+
 }
 
 @media (min-width: 830px) {
@@ -436,6 +463,10 @@ textarea {
 
 	#plantList {
 		width: 33%;
+	}
+
+	.inline-form {
+		margin-top: 1px !important ;
 	}
 
 }

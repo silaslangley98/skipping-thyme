@@ -15,8 +15,6 @@
                     .$promise
                     .then(
                         function(data) {
-                            console.log(user);
-                            console.log(data);
                             $rootScope.currentUser = data;
                             success();
                         },

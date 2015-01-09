@@ -32,7 +32,7 @@
         }
 
         $scope.signup = function() {
-
+            console.log($scope.email);
             AuthService.signup({
                 email   : $scope.email,
                 password: $scope.password

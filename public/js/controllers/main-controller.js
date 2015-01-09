@@ -3,7 +3,7 @@
 	
 	var app = angular.module('gardensApp');
 
-	app.controller('MainController', function($scope, $state, $timeout, AuthService){
+	app.controller('MainController', function($scope, $state, $timeout, AuthService, CartService){
         
         function successCallback() {
 
@@ -23,6 +23,9 @@
         $scope.logout = function() {
             AuthService.logout(successCallback);
         };
+
+        $scope.getItemCount = CartService.getItemCount;
+
     });
     
 })(window.angular);

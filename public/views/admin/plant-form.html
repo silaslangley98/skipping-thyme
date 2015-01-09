@@ -1,0 +1,124 @@
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="center-form panel">
+            <div class="panel-body">
+                <h2 class="text-center">Update Plants</h2>
+
+                <div class="alert alert-{{alert.type}}">{{alert.message}}</div>
+
+                <form method="post" ng-submit="save()" name="plantForm">
+
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control input-lg" ng-model = "plant.name" placeholder="Enter the plant's name" require autofocus>
+                    </div>
+
+                    <div class="help-block text-danger" ng-if="plantForm.name.$dirty"
+                         ng-messages="plantForm.name.$error">
+                        <div ng-message="required">Plant name is required.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="price" class="form-control input-lg" ng-model = "plant.price" placeholder="Enter the price" required>
+                    </div>
+
+                    <div class="help-block text-danger" ng-if="plant.price.$dirty"
+                         ng-messages="plantForm.price.$error">
+                        <div ng-message="required">Price is required.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="type" class="form-control input-lg"
+                               ng-model = "plant.type" placeholder="Enter the plant's type" required autofocus>
+                    </div>
+
+                    <div class="help-block text-danger" ng-if="plantForm.type.$dirty"
+                         ng-messages="plantForm.type.$error">
+                        <div ng-message="required">Plant type is required.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="family" class="form-control input-lg"
+                               ng-model = "plant.family" placeholder="Enter the plant's family" required autofocus>
+                    </div>
+
+                    <div class="help-block text-danger" ng-if="plantForm.family.$dirty"
+                         ng-messages="plantForm.family.$error">
+                        <div ng-message="required">Plant family is required.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="foliage" class="form-control input-lg"
+                               ng-model = "plant.foliage" placeholder="Enter the plant's foliage" required autofocus>
+                    </div>
+
+                    <div class="help-block text-danger" ng-if="plantForm.foliage.$dirty"
+                         ng-messages="plantForm.foliage.$error">
+                        <div ng-message="required">Plant foliage is required.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="sunAmount" class="form-control input-lg"
+                               ng-model = "plant.amountOfSun" placeholder="Enter the plant's sun needs"required autofocus>
+                    </div>
+
+                    <div class="help-block text-danger" ng-if="plantForm.amountOfSun.$dirty"
+                         ng-messages="plantForm.sunAmount.$error">
+                        <div ng-message="required">Amount of sun is required.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="description" class="form-control input-lg"
+                               ng-model = "plant.description" placeholder="Enter the plant's description" required autofocus>
+                    </div>
+
+                    <div class="help-block text-danger" ng-if="plantForm.description.$dirty"
+                         ng-messages="plantForm.description.$error">
+                        <div ng-message="required">Plant Description is required.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="inventory" class="form-control input-lg"
+                               ng-model = "plant.inventory" placeholder="Enter the plant's inventory" required autofocus>
+                    </div>
+
+                    <div class="help-block text-danger" ng-if="plantForm.inventory.$dirty"
+                         ng-messages="plantForm.inventory.$error">
+                        <div ng-message="required">Plant description is required.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="picture" class="form-control input-lg"
+                               ng-model = "plant.picture" placeholder="Enter the link to the plant's image" autofocus>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="thumbnail" class="form-control input-lg"
+                               ng-model = "plant.thumbnail" placeholder="Enter the link to the plant's thumbnail" autofocus>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="guid" class="form-control input-lg"
+                               ng-model = "plant.guid" placeholder="Enter the plant's guid" required autofocus>
+                    </div>
+
+                    <div class="help-block text-danger" ng-if="plantForm.guid.$dirty"
+                         ng-messages="plantForm.guid.$error">
+                        <div ng-message="required">Guid is required.</div>
+                    </div>
+
+                    <button type="submit" ng-disable="plantForm.$invalid" class="btn btn-lg btn-block btn-success">
+                        Update
+                    </button>
+
+                </form>
+
+                <br>
+
+                <button type="submit" ng-click="delete()" class="btn btn-lg btn-block btn-success deleteColor">
+                    Delete Plant
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -37,7 +37,7 @@ module.exports = function(app) {
             });
         });
 
-    router.route('/users')
+    /*router.route('/users')
         .get(function(req, res) {
         
             User.find(req.query, function(err, users) {
@@ -77,6 +77,7 @@ module.exports = function(app) {
                 res.send(user);
             });
         });
+    */
 
     // signup API route
     router.route('/register')

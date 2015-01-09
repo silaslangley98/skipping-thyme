@@ -9,11 +9,9 @@
 
             plants: $resource('/api/plants'),
 
-            plant: $resource('/api/plants/:id'),
+            plant: $resource('/api/admin/plants/:id'),
 
-            item: $resource('/api/admin/plants/:id'),
-
-            users: $resource('/api/admin/users'),
+            addPlant: $resource('/api/admin/add-plant'),
 
             user: $resource('/api/admin/users/:id'),
 
