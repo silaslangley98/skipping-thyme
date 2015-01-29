@@ -1,19 +1,20 @@
 // MODULES
 
-var express      = require('express'),
-    app          = express(),
-    path         = require('path'),
-    fs           = require('fs'),
-    logger       = require('morgan'),
-    mongoose     = require('mongoose'),
-    uriUtil      = require('mongodb-uri'),
-    cookieParser = require('cookie-parser'),
-    bodyParser   = require('body-parser'),
-    passport     = require('passport'),
-    session      = require('express-session'),
-    LocalStrategy = require('passport-local').Strategy,
-    bcrypt        = require('bcrypt-nodejs');
-    http         = require('http');
+var express         = require('express'),
+    app             = express(),
+    path            = require('path'),
+    fs              = require('fs'),
+    logger          = require('morgan'),
+    mongoose        = require('mongoose'),
+    uriUtil         = require('mongodb-uri'),
+    cookieParser    = require('cookie-parser'),
+    bodyParser      = require('body-parser'),
+    passport        = require('passport'),
+    session         = require('express-session'),
+    LocalStrategy   = require('passport-local').Strategy,
+    bcrypt          = require('bcrypt-nodejs'),
+    http            = require('http'),
+    nodemailer      = require('nodemailer');   
 
 require('./app/models/User.js');
 require('./app/models/Plant.js');

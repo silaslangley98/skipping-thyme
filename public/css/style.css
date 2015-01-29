@@ -14,14 +14,16 @@ body, header, h1, h2, h3, nav, footer, ul, li {
 /* MAIN TAGS */
 
 body{
-	background-color: #F3FAB6;
+	/*background-color: #F3FAB6;*/
+	background-image: url("../images/farmer2.png");
 }
 
 header{
 	height: auto;
 	width: 100%;
-	background-color: #005A31;
-	color: #33CCFF;
+	background-color: #142A01;
+	color: #C3E54B;
+	/* #33CCFF; -- */
 	/* #CBE32D; */
 	border-bottom: 2px solid #000;
 }
@@ -29,6 +31,8 @@ header{
 h1 {
 	font-size: 1.5em;
 	line-height: inherit;
+	font-family: 'Marck Script', cursive;
+	color: #fff;
 }
 
 h2 {
@@ -68,7 +72,11 @@ hr {
 }
 
 .pad {
-	padding: 0 1.5% 1.5%; 
+	padding: 0 1.5% 1.5% 0; 
+}
+
+.pad-left {
+	padding-left: 10px;
 }
 
 .btn-longer {
@@ -93,8 +101,30 @@ hr {
 	border-radius: 3px;
 }
 
+.btn-submit { 
+  margin: 5px 0;  
+  background-image: -webkit-linear-gradient(top, #142A01, #0e1d00);
+  background-image: -moz-linear-gradient(top, #142A01, #0e1d00);
+  background-image: -o-linear-gradient(top, #142A01, #0e1d00);
+  background-image: -ms-linear-gradient(top, #142A01, #0e1d00);
+  background-image: linear-gradient(top, #142A01, #0e1d00);
+  color: #fff;
+  border-radius: 10px;
+  font-size: 1em;
+
+}
+
+.btn-submit:hover {
+  background-image: -webkit-linear-gradient(top, #0e1d00, #081000);
+  background-image: -moz-linear-gradient(top, #0e1d00, #081000);
+  background-image: -o-linear-gradient(top, #0e1d00, #081000);
+  background-image: -ms-linear-gradient(top, #0e1d00, #081000);
+  background-image: linear-gradient(top, #0e1d00, #081000);
+  color:#fff;
+}
+
 .active {
-	background-color: #005A31;
+	background-color: #142A01;
 	text-decoration: underline !important;
 	color: #fff !important;
 }
@@ -126,13 +156,13 @@ hr {
 }
 
 .navbar-default{
-	background-color: #005A31;
+	background-color: #142A01;
 	border-color: transparent;
 	border-radius: 0px;
 }
 
 .navbar-default .navbar-nav>li>a {
-	color: #33CCFF;;
+	color: #C3E54B;
 	font-size: 20px;
 	font-weight: 900;
 	line-height: inherit;
@@ -152,7 +182,7 @@ hr {
 
 #temps p{
 	float: left;
-	padding: 0 15px 0 2px;
+	padding: 0 15px 0 10px;
 	margin: 0;
 }
 
@@ -163,11 +193,25 @@ input {
 .homeContainer {
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+#top-left-vine {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#top-right-vine {
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 #firstView {
 	order: 1;
-	margin: 3px 20px 0 0;	
+	margin: 3px 20px 0 0;
+	position: relative;	
 }
 
 #secondView {
@@ -177,6 +221,17 @@ input {
 }
 
 /* Search Fields */
+
+#searchShow {
+	font-size: 1.1em;
+	margin-left: 30px;
+}
+
+#searchBy {
+	font-size: 1.1em;
+	font-weight: 700;
+	text-align: center;
+}
 
 .form-height {
 	height: 28px;
@@ -192,7 +247,7 @@ input {
 }
 
 .form-horizontal .control-label {
-	text-align: center;
+	text-align: left;
 }
 
 .labelStyle {
@@ -200,6 +255,7 @@ input {
 	padding: 0 1% 0 0;
 	margin: 0;
 	font-size: 1em;
+	font-weight: 700;
 }
 
 .inputWidth {
@@ -308,6 +364,7 @@ input {
 
 textarea {
 	width: 100%;
+	margin-top: 10px;
 }
 
 #mapBox {
@@ -367,7 +424,7 @@ textarea {
 
 	#firstView {
 		flex: 1;
-		margin-top: 10px;
+		margin-top: 40px;
 	}
 
 	#secondView {
@@ -453,6 +510,31 @@ textarea {
 	.panel-left {
 		width: 40%;
 	}
+
+	label {
+		display: none;
+	}
+
+	.big-right {
+		float: right;
+	}
+
+	#firstView {
+		margin-right: 0;
+	}
+
+	#firstView form{
+		width: 80%;
+	}
+
+	.homeContainer {
+		margin-top: 5px;
+	}
+
+	.btn-submit {
+		box-shadow: 2px 2px 2px 2px #000000;
+	}
+
 }
 
 @media (min-width: 1000px) {

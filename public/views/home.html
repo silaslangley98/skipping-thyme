@@ -1,40 +1,44 @@
-<div class="homeContainer">
+<div class="homeContainer pad-left">
+    <img id="top-left-vine" class="displayWhenBig" src="images/celtic-vine-green.png">
+    <img id="top-right-vine" class="displayWhenBig" src="images/celtic-vine-green-flipped.png">
     <div id="firstView">
       <form name = "searchForm" role="form">
-        
+
+        <p id="searchBy" class="displayWhenBig inputWidth right">Search by:</p>
+        <div class="clearfix"></div>
         <div class="form-group form-horizontal form-height">
           <label for="nameSearch" class="control-label col-sm-2 labelStyle">Search by</label>
-          <input type="text" class = "form-control col-sm-2 inputWidth input-sm" placeholder="Name" ng-model="productSearch.name" typeahead="plant as plant.name for plant in plants | filter:$viewValue" typeahead-focus-first="false">
+          <input type="text" class = "big-right form-control col-sm-2 inputWidth input-sm" placeholder="Name" ng-model="productSearch.name" typeahead="plant as plant.name for plant in plants | filter:$viewValue" typeahead-focus-first="false">
         </div>
 
         <div class="form-group form-horizontal form-height">
           <label for="typeSearch" class="control-label col-sm-2 labelStyle">Search by</label>
-          <input type="text" class = "form-control col-sm-2 inputWidth input-sm" placeholder="Type" ng-model="productSearch.type" tooltip="Try: flower, fruit, herb, vegetable"  tooltip-trigger="focus" tooltip-placement="bottom">
+          <input type="text" class = "big-right form-control col-sm-2 inputWidth input-sm" placeholder="Type" ng-model="productSearch.type" tooltip="Try: flower, fruit, herb, vegetable"  tooltip-trigger="focus" tooltip-placement="bottom">
         </div>
 
         <div class="form-group form-horizontal form-height">
           <label for="familySearch" class="control-label col-sm-2 labelStyle">Search by</label>
-          <input type="text" class = "form-control col-sm-2 inputWidth input-sm" placeholder="Family" ng-model="productSearch.family" tooltip="Try: bedstraw, gourd, heather, mint, nightshade, rose, sunflower"  tooltip-trigger="focus" tooltip-placement="bottom">
+          <input type="text" class = "big-right form-control col-sm-2 inputWidth input-sm" placeholder="Family" ng-model="productSearch.family" tooltip="Try: bedstraw, gourd, heather, mint, nightshade, rose, sunflower"  tooltip-trigger="focus" tooltip-placement="bottom">
         </div>
 
         <div class="form-group form-horizontal form-height">
           <label for="foliageSearch" class="control-label col-sm-2 labelStyle">Search by</label>
-          <input type="text" class = "form-control col-sm-2 inputWidth input-sm" placeholder="Foliage" ng-model="productSearch.foliage">
+          <input type="text" class = "big-right form-control col-sm-2 inputWidth input-sm" placeholder="Foliage" ng-model="productSearch.foliage">
         </div>
 
         <div class="form-group form-horizontal form-height">
           <label for="colorSearch" class="control-label col-sm-2 labelStyle">Search by</label>
-          <input type="text" class = "form-control col-sm-2 inputWidth input-sm" placeholder="Flower Color" ng-model="productSearch.color">
+          <input type="text" class = "big-right form-control col-sm-2 inputWidth input-sm" placeholder="Flower Color" ng-model="productSearch.color">
         </div>
 
         <div class="form-group form-horizontal form-height">
           <label for="sunAmountSearch" class="control-label col-sm-2 labelStyle">Search by</label>
-          <input type="text" class = "form-control col-sm-2 inputWidth input-sm" placeholder="Amount of Sun" ng-model="productSearch.amountOfSun" tooltip="Try: full, minimal, partial"  tooltip-trigger="focus" tooltip-placement="bottom">
+          <input type="text" class = "big-right form-control col-sm-2 inputWidth input-sm" placeholder="Amount of Sun" ng-model="productSearch.amountOfSun" tooltip="Try: full, minimal, partial"  tooltip-trigger="focus" tooltip-placement="bottom">
         </div>
 
         <div class="form-group form-horizontal form-height" ng-show="productSearch.name.length || productSearch.type.length || productSearch.family.length || productSearch.foliage.length || productSearch.color.length || productSearch.amountOfSun.length">
           <label for="resetButton" class="control-label col-sm-2 labelStyle">Start Over</label>
-          <button type="button" class="btn resetButton col-sm-2 inputWidth btn-sm" ng-click="reset()">Reset</button>          
+          <button type="button" class="btn-submit col-sm-2 big-right inputWidth" ng-click="reset()">Reset</button>          
         </div>
 
       </form>
@@ -48,16 +52,16 @@
     </div>
 
     <div id = "secondView">
-      <div id="searchShow" ng-show="productSearch.name.length || productSearch.type.length || productSearch.family.length || productSearch.foliage.length || productSearch.color.length || productSearch.amountOfSun.length ">
+      <div id="searchShow" class="displayWhenBig">
             
-        <p>
+        <p class="bold">
           Showing results for: 
-            <strong ng-bind="productSearch.name">  </strong>
-            <strong ng-bind="productSearch.type">  </strong>
-            <strong ng-bind="productSearch.family">  </strong>
-            <strong ng-bind="productSearch.foliage">  </strong>
-            <strong ng-bind="productSearch.color">  </strong>
-            <strong ng-bind="productSearch.amountOfSun">  </strong>           
+            <strong ng-bind="productSearch.name" ng-show="productSearch.name.length"> </strong>
+            <strong ng-bind="productSearch.type" ng-show="productSearch.type.length">  </strong>
+            <strong ng-bind="productSearch.family" ng-show="productSearch.family.length">  </strong>
+            <strong ng-bind="productSearch.foliage" ng-show="productSearch.foliage.length">  </strong>
+            <strong ng-bind="productSearch.color" ng-show="productSearch.color.length">  </strong>
+            <strong ng-bind="productSearch.amountOfSun" ng-show="productSearch.amountOfSun.length">  </strong>           
         </p>
        
       </div>

@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Marck+Script' rel='stylesheet' type='text/css'>
     
 	<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -33,7 +34,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <h1>Sunnyside Gardens</h1>
+                    <h1 class="pad-left">Sunnyside Gardens</h1>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-collapse">
@@ -58,6 +59,8 @@
             <p>Currently: <span ng-bind="weather.temp.current | number:0"></span>&#8457</p>
             <p ng-if="weather.temp.high > -70">High: <span ng-bind="weather.temp.high | number:0"></span>&#8457</p>
             <p ng-if="weather.temp.low > -70">Low: <span ng-bind="weather.temp.low | number:0"></span>&#8457</p>
+            <p><span ng-bind="weather.description"></span></p>
+            <span ng-bind="weather.icon"></span>
         </div>
         <!--<div ui-sref-active="active" class="clearfix right" ng-if="!currentUser"><a id="signup" ui-sref="signup">sign up</a></div>-->
         <div id="loggedin" class="clearfix right bold displayWhenBig" ng-if="currentUser" ng-bind="currentUser.email + ' is logged in'">
@@ -65,7 +68,7 @@
                             
     </header>
 
-	<div ui-view></div>
+	   <div ui-view></div>
 
     <script type="text/javascript" src="libs/angular-cookies/angular-cookies.min.js"></script>
     <script type="text/javascript" src="libs/angular-messages/angular-messages.min.js"></script>

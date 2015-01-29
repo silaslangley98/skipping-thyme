@@ -8,7 +8,7 @@
 		return {
 
 			getWeather: function() {
-				var weather = {temp: {}, clouds: null, rain: null};
+				var weather = {temp: {}, description: null, icon: null};
 				var city = "fresno,us";
 				var url1 = "http://api.openweathermap.org/data/2.5/weather?q=";
 				var url2 = "&units=imperial&callback=JSON_CALLBACK";
@@ -19,6 +19,12 @@
 						//  "http://api.openweathermap.org/data/2.5/weather?q=fresno,us&units=imperial&callback=JSON_CALLBACK"						
 					}).success(function(data) {
 						weather.temp.current = data.main.temp;
+						console.log(data.weather);
+						weather.description = data.weather.description;
+						weather.icon = data.weather.icon;
+						console.log(weather.description);
+						console.log(weather.icon);
+						console.log(weather.temp.current);
 					});
 
 				$http({
