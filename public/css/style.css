@@ -32,7 +32,6 @@ h1 {
 	font-size: 1.5em;
 	line-height: inherit;
 	font-family: 'Marck Script', cursive;
-	color: #fff;
 }
 
 h2 {
@@ -41,7 +40,7 @@ h2 {
 
 hr {
 	margin: 5px 0 0 0 !important;	
-	border-top: 1px solid rgb(0,102,0) !important;
+	border-top: 1px solid rgb(20,42,1) !important;
 	width: 100%;
 }
 
@@ -57,10 +56,19 @@ hr {
 
 .layout {
 	width: 97%;
+	margin: 0 auto;
 }
 
 .bold {
 	font-weight: 700;
+}
+
+.font-white {
+	color: #fff !important;
+}
+
+.nowrap-fix {
+	white-space: nowrap;
 }
 
 .topMargin {
@@ -87,6 +95,10 @@ hr {
 	width: 125px;
 }
 
+.input-border {
+	border: 2px outset buttonface;
+}
+
 .btn-resize {
 	padding: 1px 5px;
 	font-size: 12px;
@@ -101,26 +113,72 @@ hr {
 	border-radius: 3px;
 }
 
-.btn-submit { 
+.btn-general {	
+	border-radius: 10px;
+  	font-size: 1em;
+}
+
+.btn-submit {   
   margin: 5px 0;  
   background-image: -webkit-linear-gradient(top, #142A01, #0e1d00);
   background-image: -moz-linear-gradient(top, #142A01, #0e1d00);
   background-image: -o-linear-gradient(top, #142A01, #0e1d00);
   background-image: -ms-linear-gradient(top, #142A01, #0e1d00);
-  background-image: linear-gradient(top, #142A01, #0e1d00);
-  color: #fff;
-  border-radius: 10px;
-  font-size: 1em;
-
+  background-image: linear-gradient(top, #142A01, #0e1d00); 
 }
 
 .btn-submit:hover {
-  background-image: -webkit-linear-gradient(top, #0e1d00, #081000);
+  /*background-image: -webkit-linear-gradient(top, #0e1d00, #081000);
   background-image: -moz-linear-gradient(top, #0e1d00, #081000);
   background-image: -o-linear-gradient(top, #0e1d00, #081000);
   background-image: -ms-linear-gradient(top, #0e1d00, #081000);
-  background-image: linear-gradient(top, #0e1d00, #081000);
-  color:#fff;
+  background-image: linear-gradient(top, #0e1d00, #081000);*/
+  background-image: -webkit-linear-gradient(top, #142A01, #244A02);
+  background-image: -moz-linear-gradient(top, #142A01, #244A02);
+  background-image: -o-linear-gradient(top, #142A01, #244A02);
+  background-image: -ms-linear-gradient(top, #142A01, #244A02);
+  background-image: linear-gradient(top, #142A01, #244A02);
+
+  color: #fff;
+}
+
+.btn-remove {
+  background-color: #660000;
+  background-image: -webkit-linear-gradient(bottom, #660000, #990000);
+  background-image: -moz-linear-gradient(bottom, #660000, #990000);
+  background-image: -o-linear-gradient(bottom, #660000, #990000);
+  background-image: -ms-linear-gradient(bottom, #660000, #990000);
+  background-image: linear-gradient(bottom, #660000, #990000);
+}
+
+.btn-remove:hover {
+  background-color: #290000;
+  background-image: -webkit-linear-gradient(bottom, #290000, #570000);
+  background-image: -moz-linear-gradient(bottom, #290000, #570000);
+  background-image: -o-linear-gradient(bottom, #290000, #570000);
+  background-image: -ms-linear-gradient(bottom, #290000, #570000);
+  background-image: linear-gradient(bottom, #290000, #570000);
+}
+
+.btn-shop {
+	background-color: #160128;
+}
+
+.btn-shop:hover {
+	background-color: #44037B;
+	text-decoration: none;
+}
+
+.btn-view {
+	background-color: #142A01;
+}
+
+.btn-view:hover {
+	background-color: #244A02; 
+}
+
+.top-border-white {
+	border-top: 1px solid #fff;
 }
 
 .active {
@@ -164,11 +222,11 @@ hr {
 .navbar-default .navbar-nav>li>a {
 	color: #C3E54B;
 	font-size: 20px;
-	font-weight: 900;
+	font-weight: 400;
 	line-height: inherit;
 	padding-top: 6px;
+	font-family: 'Marck Script', cursive;
 }
-
 
 .navbar-default .navbar-nav>li>a:hover {
 	color: #fff;
@@ -186,9 +244,10 @@ hr {
 	margin: 0;
 }
 
-input {
+/* input {
 	text-align: center;
 }
+*/
 
 .homeContainer {
   display: flex;
@@ -229,8 +288,6 @@ input {
 
 #searchBy {
 	font-size: 1.1em;
-	font-weight: 700;
-	text-align: center;
 }
 
 .form-height {
@@ -255,13 +312,13 @@ input {
 	padding: 0 1% 0 0;
 	margin: 0;
 	font-size: 1em;
-	font-weight: 700;
 }
 
 .inputWidth {
 	width: 63%;
 }
 
+/*
 .resetButton {
 	background-color: #005A31;
 	color: #fff;
@@ -271,8 +328,18 @@ input {
 	background-color: #C9302C;
 	color: #fff;
 }
+*/
 
 /* Cart */
+
+#cart-view {
+	max-width: 973px;
+	margin: 20px auto;
+}
+
+#continue-shopping {
+	padding-right: 10px;
+}
 
 .table>thead>tr>th, .table>tbody>tr>th, .table>thead>tr>td, .table>tbody>tr>td {
 	vertical-align: middle;
@@ -285,14 +352,14 @@ input {
 /* Plant Gallery */
 
 #plantList{
-	margin: 0 auto 30px auto;
+	margin: 0 auto 30px;
 }
 
 .plantCard {
 	display: none;
 	height: 330px;
 	width: 200px;
-	border: 1px solid black;
+	border: 1px solid #000;
 	border-radius: 5px;
 	margin: 0 30px;
 }
@@ -300,12 +367,14 @@ input {
 .plantCard img{
 	width: 100%;
 	height: 220px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
 }
 
 .plantHeader{
 	height: 40px;
 	width: 100%;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #000;
 	padding: 5px 10px;
 	font-size: 1.25em;
 	line-height: 2.1em;
@@ -315,7 +384,6 @@ input {
 .plantHeader p {
 	margin-bottom: 0;
 	height: 30px;
-	color: #fff;
 }
 
 .veggieColor{
@@ -324,16 +392,19 @@ input {
 }
 
 .herbColor{
-	background-color: #5Cb85C;
+	background-color: #142A01;
+	/*#5Cb85C;*/
 	/*#6BAE63;*/
 }
 
 .flowerColor{
-	background-color: #A89ACB;
+	background-color: #660000;
+	 /*#A89ACB;*/
 }
 
 .fruitColor{
-	background-color: #F78D51;
+	background-color: #160128;
+	/*#F78D51;*/
 }
 
 /* PLANT DETAILS STYLES */
@@ -418,10 +489,6 @@ textarea {
 		font-size: 2.5em;
 	}
 
-	.homeContainer {
-		flex-direction: row;
-	}
-
 	#firstView {
 		flex: 1;
 		margin-top: 40px;
@@ -447,6 +514,18 @@ textarea {
 		flex: 3;
 	}
 
+	#plantGallery table {
+		display: none;
+	}
+
+	#cart-header {
+		padding-left: 5px;
+	}
+
+	.homeContainer {
+		flex-direction: row;
+	}
+
 	.btn-resize {
 		padding: 6px 12px;
 		margin-bottom: 0;
@@ -455,6 +534,10 @@ textarea {
 		line-height: 1.42857143;
 		text-align: center;
 		vertical-align: middle;
+	}
+
+	.btn-radius-resize {
+		border-radius: 0;
 	}
 
 	.form-height {
@@ -466,26 +549,18 @@ textarea {
 		width: 100%;
 	}
 
+	.inline-form {
+		margin-top: 6px !important;
+	}
+
 	.labelStyle {
 		padding: 0 5% 0 0;
 		font-size: 1.1em;
 	}
-
-	#plantGallery table {
-		display: none;
-	}
-
+	
 	.plantCard {
 		display: block;
-	}
-
-	.btn-radius-resize {
-		border-radius: 0;
-	}
-
-	.inline-form {
-		margin-top: 6px !important;
-	}
+	}	
 
 }
 
@@ -499,24 +574,8 @@ textarea {
 		font-size: 2.5em;
 	}
 
-	.displayWhenBig {
-		display: block;
-	}
-
-	.navbar-default .navbar-nav>li>a {
-		padding-top: 15px;
-	}
-
-	.panel-left {
-		width: 40%;
-	}
-
 	label {
 		display: none;
-	}
-
-	.big-right {
-		float: right;
 	}
 
 	#firstView {
@@ -527,13 +586,34 @@ textarea {
 		width: 80%;
 	}
 
+	#firstView input:focus {
+		box-shadow: 2px 2px 2px 2px #000000;
+	}
+
+	.displayWhenBig {
+		display: block;
+	}
+
+	.big-right {
+		float: right;
+	}
+
+	.shadow {
+		box-shadow: 2px 2px 2px 2px #000000;
+	}
+
+	.navbar-default .navbar-nav>li>a {
+		font-size: 2.5em;
+		padding-top: 14px;
+	}
+
 	.homeContainer {
 		margin-top: 5px;
 	}
 
-	.btn-submit {
-		box-shadow: 2px 2px 2px 2px #000000;
-	}
+	.panel-left {
+		width: 40%;
+	}	
 
 }
 
@@ -563,10 +643,6 @@ textarea {
 		font-size: 3.5em;
 	}
 
-	.navbar-default .navbar-nav>li>a {
-		font-size: 23px;
-		padding-top: 27px;
-	}
 }
 
 @media (min-width: 1100px) {
@@ -575,8 +651,8 @@ textarea {
 		flex: 3;
 	}
 
-	
+	#continue-shopping {
+		margin-top: 10px;
+	}
 
 }
-
-

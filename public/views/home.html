@@ -1,44 +1,44 @@
 <div class="homeContainer pad-left">
-    <img id="top-left-vine" class="displayWhenBig" src="images/celtic-vine-green.png">
-    <img id="top-right-vine" class="displayWhenBig" src="images/celtic-vine-green-flipped.png">
+    <img id="top-left-vine" class="displayWhenBig" src="images/celtic-vine-dark-green.png">
+    <img id="top-right-vine" class="displayWhenBig" src="images/celtic-vine-dark-green-flipped.png">
     <div id="firstView">
       <form name = "searchForm" role="form">
 
-        <p id="searchBy" class="displayWhenBig inputWidth right">Search by:</p>
+        <p id="searchBy" class="displayWhenBig inputWidth right bold text-center">Search by:</p>
         <div class="clearfix"></div>
         <div class="form-group form-horizontal form-height">
-          <label for="nameSearch" class="control-label col-sm-2 labelStyle">Search by</label>
-          <input type="text" class = "big-right form-control col-sm-2 inputWidth input-sm" placeholder="Name" ng-model="productSearch.name" typeahead="plant as plant.name for plant in plants | filter:$viewValue" typeahead-focus-first="false">
+          <label for="nameSearch" class="control-label col-sm-2 bold labelStyle">Search by</label>
+          <input type="text" class = "btn-general big-right form-control col-sm-2 inputWidth input-sm text-center input-border" placeholder="Name" ng-model="productSearch.name" typeahead="plant as plant.name for plant in plants | filter:$viewValue" typeahead-focus-first="false">
         </div>
 
         <div class="form-group form-horizontal form-height">
-          <label for="typeSearch" class="control-label col-sm-2 labelStyle">Search by</label>
-          <input type="text" class = "big-right form-control col-sm-2 inputWidth input-sm" placeholder="Type" ng-model="productSearch.type" tooltip="Try: flower, fruit, herb, vegetable"  tooltip-trigger="focus" tooltip-placement="bottom">
+          <label for="typeSearch" class="control-label col-sm-2 bold labelStyle">Search by</label>
+          <input type="text" class = "btn-general big-right form-control col-sm-2 inputWidth input-sm text-center input-border" placeholder="Type" ng-model="productSearch.type" tooltip="Try: flower, fruit, herb, vegetable"  tooltip-trigger="focus" tooltip-placement="bottom">
         </div>
 
         <div class="form-group form-horizontal form-height">
-          <label for="familySearch" class="control-label col-sm-2 labelStyle">Search by</label>
-          <input type="text" class = "big-right form-control col-sm-2 inputWidth input-sm" placeholder="Family" ng-model="productSearch.family" tooltip="Try: bedstraw, gourd, heather, mint, nightshade, rose, sunflower"  tooltip-trigger="focus" tooltip-placement="bottom">
+          <label for="familySearch" class="control-label col-sm-2 bold labelStyle">Search by</label>
+          <input type="text" class = "btn-general big-right form-control col-sm-2 inputWidth input-sm text-center input-border" placeholder="Family" ng-model="productSearch.family" tooltip="Try: bedstraw, gourd, heather, mint, nightshade, rose, sunflower"  tooltip-trigger="focus" tooltip-placement="bottom">
         </div>
 
         <div class="form-group form-horizontal form-height">
-          <label for="foliageSearch" class="control-label col-sm-2 labelStyle">Search by</label>
-          <input type="text" class = "big-right form-control col-sm-2 inputWidth input-sm" placeholder="Foliage" ng-model="productSearch.foliage">
+          <label for="foliageSearch" class="control-label col-sm-2 bold labelStyle">Search by</label>
+          <input type="text" class = "btn-general big-right form-control col-sm-2 inputWidth input-sm text-center input-border" placeholder="Foliage" ng-model="productSearch.foliage">
         </div>
 
         <div class="form-group form-horizontal form-height">
-          <label for="colorSearch" class="control-label col-sm-2 labelStyle">Search by</label>
-          <input type="text" class = "big-right form-control col-sm-2 inputWidth input-sm" placeholder="Flower Color" ng-model="productSearch.color">
+          <label for="colorSearch" class="control-label col-sm-2 bold labelStyle">Search by</label>
+          <input type="text" class = "btn-general big-right form-control col-sm-2 inputWidth input-sm text-center input-border" placeholder="Flower Color" ng-model="productSearch.color">
         </div>
 
         <div class="form-group form-horizontal form-height">
-          <label for="sunAmountSearch" class="control-label col-sm-2 labelStyle">Search by</label>
-          <input type="text" class = "big-right form-control col-sm-2 inputWidth input-sm" placeholder="Amount of Sun" ng-model="productSearch.amountOfSun" tooltip="Try: full, minimal, partial"  tooltip-trigger="focus" tooltip-placement="bottom">
+          <label for="sunAmountSearch" class="control-label col-sm-2 bold labelStyle">Search by</label>
+          <input type="text" class = "btn-general big-right form-control col-sm-2 inputWidth input-sm text-center input-border" placeholder="Amount of Sun" ng-model="productSearch.amountOfSun" tooltip="Try: full, minimal, partial"  tooltip-trigger="focus" tooltip-placement="bottom">
         </div>
 
         <div class="form-group form-horizontal form-height" ng-show="productSearch.name.length || productSearch.type.length || productSearch.family.length || productSearch.foliage.length || productSearch.color.length || productSearch.amountOfSun.length">
-          <label for="resetButton" class="control-label col-sm-2 labelStyle">Start Over</label>
-          <button type="button" class="btn-submit col-sm-2 big-right inputWidth" ng-click="reset()">Reset</button>          
+          <label for="resetButton" class="control-label col-sm-2 bold labelStyle">Start Over</label>
+          <button type="button" class="btn-general btn-submit font-white col-sm-2 big-right inputWidth shadow" ng-click="reset()">Reset</button>          
         </div>
 
       </form>
@@ -90,8 +90,8 @@
         <ul id="plantList" class="left" ng-repeat="plant in plants | filter:productSearch | orderBy:'name'">         
           <li class="plantCard">
             <div class="plantHeader" ng-class="{veggieColor: plant.type=='vegetable', herbColor: plant.type=='herb', flowerColor: plant.type=='flower', fruitColor: plant.type=='fruit'}">
-              <p ng-bind="plant.name" class="left"></p>
-              <p ng-bind="plant.price | currency" class="right"></p>
+              <p ng-bind="plant.name" class="left font-white"></p>
+              <p ng-bind="plant.price | currency" class="right font-white"></p>
 
             </div>
             
