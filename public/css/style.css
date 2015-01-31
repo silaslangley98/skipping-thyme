@@ -32,6 +32,7 @@ h1 {
 	font-size: 1.5em;
 	line-height: inherit;
 	font-family: 'Marck Script', cursive;
+	margin-top: 4px;
 }
 
 h2 {
@@ -99,6 +100,11 @@ hr {
 	border: 2px outset buttonface;
 }
 
+.input-sm {
+	height: 20px;
+	line-height: 1.6;
+}
+
 .btn-resize {
 	padding: 1px 5px;
 	font-size: 12px;
@@ -115,7 +121,7 @@ hr {
 
 .btn-general {	
 	border-radius: 10px;
-  	font-size: 1em;
+  	font-size: .9em;
 }
 
 .btn-submit {   
@@ -138,7 +144,6 @@ hr {
   background-image: -o-linear-gradient(top, #142A01, #244A02);
   background-image: -ms-linear-gradient(top, #142A01, #244A02);
   background-image: linear-gradient(top, #142A01, #244A02);
-
   color: #fff;
 }
 
@@ -162,6 +167,7 @@ hr {
 
 .btn-shop {
 	background-color: #160128;
+	color: #fff;
 }
 
 .btn-shop:hover {
@@ -175,10 +181,6 @@ hr {
 
 .btn-view:hover {
 	background-color: #244A02; 
-}
-
-.top-border-white {
-	border-top: 1px solid #fff;
 }
 
 .active {
@@ -209,8 +211,9 @@ hr {
 }
 
 .navbar-toggle {
-	margin-top: 0;
+	margin-top: 5px;
 	margin-bottom: 0;
+	padding: 5px 5px;
 }
 
 .navbar-default{
@@ -464,6 +467,9 @@ textarea {
 		font-size: 2em;
 	}
 
+	.navbar-toggle {
+		padding: 10px 10px;
+	}
 }
 
 @media (min-width: 450px) {
@@ -526,6 +532,10 @@ textarea {
 		flex-direction: row;
 	}
 
+	.btn-general {
+		font-size: 1em;
+	}
+
 	.btn-resize {
 		padding: 6px 12px;
 		margin-bottom: 0;
@@ -539,6 +549,15 @@ textarea {
 	.btn-radius-resize {
 		border-radius: 0;
 	}
+
+	.input-sm {
+		height: 30px;
+	}
+
+	.top-border-white {
+		border-top: 1px solid #fff;
+	}
+
 
 	.form-height {
 		height: 34px;
@@ -625,6 +644,7 @@ textarea {
 
 	#secondView {
 		flex: 2.5;
+		margin-right: 90px;
 	}
 
 	#plantList {
@@ -653,6 +673,14 @@ textarea {
 
 	#continue-shopping {
 		margin-top: 10px;
+	}
+
+}
+
+@media (min-width: 1300px) {
+
+	#secondView {
+		margin-right: 0;
 	}
 
 }
