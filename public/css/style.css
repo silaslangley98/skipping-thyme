@@ -28,6 +28,11 @@ header{
 	border-bottom: 2px solid #000;
 }
 
+header img {
+	padding-top: 14px;
+	display: none;
+}
+
 h1 {
 	font-size: 1.5em;
 	line-height: inherit;
@@ -489,15 +494,46 @@ textarea {
 
 }
 
-@media (min-width: 813px) {
+@media (min-width: 768px) {
 
-	h2 {
+	.navbar-default .navbar-nav>li>a {
+		font-size: 2em;
+		padding-top: 6px;
+		padding-bottom: 0;
+	}
+
+	.form-horizontal .control-label {
+		padding-top: 0;
+	}
+
+}
+
+@media (min-width: 871px) {
+
+	header {
+		min-height: 90px;
+	}
+
+	h1, h2 {
 		font-size: 2.5em;
+	}
+
+	label {
+		display: none;
 	}
 
 	#firstView {
 		flex: 1;
 		margin-top: 40px;
+		margin-right: 0;
+	}
+
+	#firstView form{
+		width: 80%;
+	}
+
+	#firstView input:focus {
+		box-shadow: 2px 2px 2px 2px #000;
 	}
 
 	#secondView {
@@ -558,7 +594,6 @@ textarea {
 		border-top: 1px solid #fff;
 	}
 
-
 	.form-height {
 		height: 34px;
 	}
@@ -581,34 +616,6 @@ textarea {
 		display: block;
 	}	
 
-}
-
-@media (min-width: 830px) {
-
-	header {
-		min-height: 90px;
-	}
-
-	h1 {
-		font-size: 2.5em;
-	}
-
-	label {
-		display: none;
-	}
-
-	#firstView {
-		margin-right: 0;
-	}
-
-	#firstView form{
-		width: 80%;
-	}
-
-	#firstView input:focus {
-		box-shadow: 2px 2px 2px 2px #000000;
-	}
-
 	.displayWhenBig {
 		display: block;
 	}
@@ -622,8 +629,8 @@ textarea {
 	}
 
 	.navbar-default .navbar-nav>li>a {
-		font-size: 2.5em;
-		padding-top: 14px;
+		font-size: 2.2em;
+		padding-top: 8px;
 	}
 
 	.homeContainer {
@@ -639,7 +646,7 @@ textarea {
 @media (min-width: 1000px) {
 
 	header {
-		min-height: 105px;
+		min-height: 85px;
 	}
 
 	#secondView {
@@ -659,8 +666,21 @@ textarea {
 
 @media (min-width: 1020px) {
 
+	header {
+		min-height: 105px;
+	}
+
+	header img {
+		display: block;
+	}
+
 	h1 {
 		font-size: 3.5em;
+	}
+
+	.navbar-default .navbar-nav>li>a {
+		font-size: 2.7em;
+		padding-top: 13px;
 	}
 
 }
