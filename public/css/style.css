@@ -252,11 +252,6 @@ hr {
 	margin: 0;
 }
 
-/* input {
-	text-align: center;
-}
-*/
-
 .homeContainer {
   display: flex;
   flex-direction: column;
@@ -325,18 +320,6 @@ hr {
 .inputWidth {
 	width: 63%;
 }
-
-/*
-.resetButton {
-	background-color: #005A31;
-	color: #fff;
-}
-
-.resetButton:hover {
-	background-color: #C9302C;
-	color: #fff;
-}
-*/
 
 /* Cart */
 
@@ -432,8 +415,6 @@ hr {
 #plantImage img {
 	width: 100%;
 }
-
-/* ABOUT PAGE */
 
 /* CONTACT PAGE */
 

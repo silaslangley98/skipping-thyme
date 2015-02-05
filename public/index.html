@@ -23,12 +23,12 @@
     <script type="text/javascript" src="libs/angular-ui-bootstrap-bower/ui-bootstrap-tpls.min.js"></script>
 </head>
 
-<body ng-controller = "MainController">
+<body ng-controller = "MainController"> <!-- The main controller handles logging out -->
     <header class = "pad">
         <nav class="navbar navbar-default" role="navigation">
             <div>
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-collapse">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-collapse"> <!-- using Bootstrap's responsive nav -->
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -43,35 +43,35 @@
                 <div class="collapse navbar-collapse" id="bs-collapse">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a ui-sref-active="active" ui-sref="home">home</a></li>
-                        <li><a ng-show="getItemCount()" ui-sref-active="active" ui-sref="cart">cart</a></li>
+                        <li><a ng-show="getItemCount()" ui-sref-active="active" ui-sref="cart">cart</a></li> <!-- only shows cart menu item when at least one item has already been added to the cart -->
                         <li><a ui-sref-active="active" ui-sref="about">about</a></li>
                         <li><a ui-sref-active="active" ui-sref="contact">contact</a></li>
                                               
-                        <li ng-hide="currentUser">
+                        <li ng-hide="currentUser"> <!-- if a user is logged in, then hide the login menu item -->
                             <a ui-sref="login" ui-sref-active="active">login</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);" ng-click="logout()" ui-sref-active="active" ng-if="currentUser">logout</a>
+                            <a href="javascript:void(0);" ng-click="logout()" ui-sref-active="active" ng-if="currentUser">logout</a> <!-- only show the logout menu item when a user is logged in -->
                         </li>
                        
                     </ul>                    
                 </div>
             </div>
         </nav>
-        <div id="temps" class="clearfix left bold displayWhenBig" ng-controller = "WeatherController">
+        <div id="temps" class="clearfix left bold displayWhenBig" ng-controller = "WeatherController"> <!-- grabs weather data from openweathermap.org. Unfortunately their data is not always reliable. The problem is on their end, not on mine -->
             <p>Currently: <span ng-bind="weather.temp.current | number:0"></span>&#8457</p>
-            <p ng-if="weather.temp.high > -70">High: <span ng-bind="weather.temp.high | number:0"></span>&#8457</p>
+            <p ng-if="weather.temp.high > -70">High: <span ng-bind="weather.temp.high | number:0"></span>&#8457</p> <!-- sometimes the data for the high and low temps are blatantly wrong - with low low temps - I will not display the data if the temps are obviously too low -->
             <p ng-if="weather.temp.low > -70">Low: <span ng-bind="weather.temp.low | number:0"></span>&#8457</p>
-            <p><span ng-bind="weather.description"></span></p>
+            <p><span ng-bind="weather.description"></span></p> <!-- currently openweathermap.org isn't providing the data for Fresno, CA for the description and the icon - but the code is ready and waiting for when it does -->
             <span ng-bind="weather.icon"></span>
         </div>
-        <!--<div ui-sref-active="active" class="clearfix right" ng-if="!currentUser"><a id="signup" ui-sref="signup">sign up</a></div>-->
+        <!--<div ui-sref-active="active" class="clearfix right" ng-if="!currentUser"><a id="signup" ui-sref="signup">sign up</a></div>--> <!-- I eventually plan to implement a signup feature -->
         <div id="loggedin" class="clearfix right bold displayWhenBig" ng-if="currentUser" ng-bind="currentUser.email + ' is logged in'">
         </div>
                             
     </header>
 
-	   <div ui-view></div>
+	   <div ui-view></div> <!-- The main view goes here -->
 
     <script type="text/javascript" src="libs/angular-cookies/angular-cookies.min.js"></script>
     <script type="text/javascript" src="libs/angular-messages/angular-messages.min.js"></script>

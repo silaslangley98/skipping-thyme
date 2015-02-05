@@ -1,8 +1,8 @@
 <div class="homeContainer pad-left">
     <img id="top-left-vine" class="displayWhenBig" src="images/celtic-vine-dark-green.png">
     <img id="top-right-vine" class="displayWhenBig" src="images/celtic-vine-dark-green-flipped.png">
-    <div id="firstView">
-      <form name = "searchForm" role="form">
+    <div id="firstView"> <!-- The first view consists of the input form and the cart -->
+      <form name = "searchForm" role="form">  <!-- two-way data binding with the "See results for" section below and the plant gallery below - the data binding is based on 'productSearch' as shown in the ng-models below -->
 
         <p id="searchBy" class="displayWhenBig inputWidth right bold text-center">Search by:</p>
         <div class="clearfix"></div>
@@ -36,7 +36,7 @@
           <input type="text" class = "btn-general big-right form-control col-sm-2 inputWidth input-sm text-center input-border" placeholder="Amount of Sun" ng-model="productSearch.amountOfSun" tooltip="Try: full, minimal, partial"  tooltip-trigger="focus" tooltip-placement="bottom">
         </div>
 
-        <div class="form-group form-horizontal form-height" ng-show="productSearch.name.length || productSearch.type.length || productSearch.family.length || productSearch.foliage.length || productSearch.color.length || productSearch.amountOfSun.length">
+        <div class="form-group form-horizontal form-height" ng-show="productSearch.name.length || productSearch.type.length || productSearch.family.length || productSearch.foliage.length || productSearch.color.length || productSearch.amountOfSun.length"> <!-- only shows the reset button if a search has also started in one of the inputs above -->
           <label for="resetButton" class="control-label col-sm-2 bold labelStyle">Start Over</label>
           <button type="button" class="btn-general btn-submit font-white col-sm-2 big-right inputWidth shadow" ng-click="reset()">Reset</button>          
         </div>
@@ -45,14 +45,14 @@
 
       <hr>
       
-      <div class = "displayWhenBig">
-        <shopping-cart plant = "plant"></shopping-cart>
+      <div class = "displayWhenBig"> <!-- only display the shopping cart when the browser window is big enough for it -->
+        <shopping-cart plant = "plant"></shopping-cart> <!-- the custom directive for the shopping cart -->
       </div>
 
     </div>
 
-    <div id = "secondView">
-      <div id="searchShow" class="displayWhenBig">
+    <div id = "secondView"> <!-- The second view consists of the plant image gallery when the browser window is big enough or a table that lists the plants when the browser window is smaller -->
+      <div id="searchShow" class="displayWhenBig"> <!-- only lists out the results when the browser window is big enough so as to not overcrowd smaller device windows -->
             
         <p class="bold">
           Showing results for: 
@@ -66,19 +66,19 @@
        
       </div>
 
-      <div id="plantGallery">
+      <div id="plantGallery"> 
         
-        <table class="table table-hover table-condensed">
+        <table class="table table-hover table-condensed"> <!-- the table that lists the plants when the browser window is smaller. CSS media queries determine when the table is visible -->
           <thead>
             <tr>
               <th>Name</th>
               <th>Price</th>
-              <th><span ng-show="getItemCount()">Total: {{ getCartTotal() | currency }}</span></th>
+              <th><span ng-show="getItemCount()">Total: {{ getCartTotal() | currency }}</span></th> <!-- only shows the total when the user has already placed items in the cart and thus only when there are items to be totaled -->
               <th class="tableBorderBottom"><view-cart-button></view-cart-button></th>
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="plant in plants | filter:productSearch | orderBy:'name'">
+            <tr ng-repeat="plant in plants | filter:productSearch | orderBy:'name'"> <!-- lists out the rows of the table that lists the plants, but only including those plants that match what is inputted in the search fields above. It shows all the plants if nothing is entered in the search fields -->
               <td ng-bind="plant.name"></td>
               <td ng-bind="plant.price | currency"></td>
               <td><add-cart-button plant = "plant"></add-cart-button></td>
@@ -87,9 +87,9 @@
           </tbody>
         </table>
 
-        <ul id="plantList" class="left" ng-repeat="plant in plants | filter:productSearch | orderBy:'name'">         
-          <li class="plantCard">
-            <div class="plantHeader" ng-class="{veggieColor: plant.type=='vegetable', herbColor: plant.type=='herb', flowerColor: plant.type=='flower', fruitColor: plant.type=='fruit'}">
+        <ul id="plantList" class="left" ng-repeat="plant in plants | filter:productSearch | orderBy:'name'"> <!-- uses ng-repeat to show all the plants when no search items are entered and only those plants that fit the search items when search items have been entered -->    
+          <li class="plantCard"> <!-- CSS media queries determine that the plant cards are only visible when the browser size is bigger -->
+            <div class="plantHeader" ng-class="{veggieColor: plant.type=='vegetable', herbColor: plant.type=='herb', flowerColor: plant.type=='flower', fruitColor: plant.type=='fruit'}"> <!-- the card's header is color-coded according to the type of plant -->
               <p ng-bind="plant.name" class="left font-white"></p>
               <p ng-bind="plant.price | currency" class="right font-white"></p>
 
