@@ -23,7 +23,7 @@
     <script type="text/javascript" src="libs/angular-ui-bootstrap-bower/ui-bootstrap-tpls.min.js"></script>
 </head>
 
-<body ng-controller = "MainController"> <!-- The main controller handles logging out -->
+<body ng-controller = "MainController">
     <header class = "pad">
         <nav class="navbar navbar-default" role="navigation">
             <div>
@@ -36,7 +36,7 @@
                     </button>
                     <div>
                         <img class="left pad-left" src="images/garden-icon-white-sm.png">
-                        <h1 class="right pad-left font-white">Sunnyside Gardens</h1>
+                        <h1 class="left pad-left font-white">Sunnyside Gardens</h1>
                     </div>
                 </div>
 
@@ -58,20 +58,27 @@
                 </div>
             </div>
         </nav>
+
         <div id="temps" class="clearfix left bold displayWhenBig" ng-controller = "WeatherController"> <!-- grabs weather data from openweathermap.org. Unfortunately their data is not always reliable. The problem is on their end, not on mine -->
+
             <p>Currently: <span ng-bind="weather.temp.current | number:0"></span>&#8457</p>
             <p ng-if="weather.temp.high > -70">High: <span ng-bind="weather.temp.high | number:0"></span>&#8457</p> <!-- sometimes the data for the high and low temps are blatantly wrong - with low low temps - I will not display the data if the temps are obviously too low -->
+
             <p ng-if="weather.temp.low > -70">Low: <span ng-bind="weather.temp.low | number:0"></span>&#8457</p>
+
             <p><span ng-bind="weather.description"></span></p> <!-- currently openweathermap.org isn't providing the data for Fresno, CA for the description and the icon - but the code is ready and waiting for when it does -->
+
             <span ng-bind="weather.icon"></span>
         </div>
+
         <!--<div ui-sref-active="active" class="clearfix right" ng-if="!currentUser"><a id="signup" ui-sref="signup">sign up</a></div>--> <!-- I don't wish to show the signup option in the nav menu yet -->
-        <div id="loggedin" class="clearfix right bold displayWhenBig" ng-if="currentUser" ng-bind="currentUser.email + ' is logged in'">
-        </div>
+
+        <div id="loggedin" class="clearfix right bold displayWhenBig" ng-if="currentUser" ng-bind="currentUser.email + ' is logged in'"></div>
                             
     </header>
 
-	   <div ui-view></div> <!-- The view goes here - set to the home view by default in the AppRoutes.js file -->
+	<div ui-view></div>
+       <!-- The view goes here. It is set to the home view by default in the AppRoutes.js file -->
 
     <script type="text/javascript" src="libs/angular-cookies/angular-cookies.min.js"></script>
     <script type="text/javascript" src="libs/angular-messages/angular-messages.min.js"></script>

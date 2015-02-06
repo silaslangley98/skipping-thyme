@@ -5,14 +5,14 @@
 
 	app.controller('PlantFormController', function($scope, API, $stateParams){
 
-		function updateSuccess() {
+		function updateSuccess() { // callback function for when the plant information is successfully updated in the database
             $scope.alert = {
                 type: 'success',
                 message: 'You have successfully updated the plant.'
             };
         }
 
-        function deleteSuccess() {
+        function deleteSuccess() { // callback function for when the plant is successfully deleted from the database
         	$scope.alert = {
         		type: 'success',
         		message: 'You have successfully deleted the plant.'
