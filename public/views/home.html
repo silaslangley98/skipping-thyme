@@ -38,7 +38,7 @@
 
         <div class="form-group form-horizontal form-height" ng-show="productSearch.name.length || productSearch.type.length || productSearch.family.length || productSearch.foliage.length || productSearch.color.length || productSearch.amountOfSun.length"> <!-- only shows the reset button if a search has also started in one of the inputs above -->
           <label for="resetButton" class="control-label col-sm-2 bold labelStyle">Start Over</label>
-          <button type="button" class="btn-general btn-submit font-white col-sm-2 big-right inputWidth shadow" ng-click="reset()">Reset</button>          
+          <button type="button" class="btn-general btn-submit font-white col-sm-2 big-right inputWidth shadow" ng-click="reset()">Reset</button> <!-- calls the reset function on the Home Controller when clicked -->     
         </div>
 
       </form>

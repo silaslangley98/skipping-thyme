@@ -3,7 +3,7 @@
 	<div class="panel panel-default">
 	  <div class="panel-body">
 	  	<div id = "carousel" class = "right panel-right displayWhenBig">
-		    <carousel interval="myInterval">
+		    <carousel interval="myInterval"> <!-- uses angular bootstrap for the carousel -->
 		      <slide ng-repeat="slide in slides" active="slide.active">
 		        <img ng-src="{{slide.image}}" style="margin:auto;">
 		      </slide>

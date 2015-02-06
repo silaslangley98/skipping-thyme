@@ -65,13 +65,13 @@
             <p><span ng-bind="weather.description"></span></p> <!-- currently openweathermap.org isn't providing the data for Fresno, CA for the description and the icon - but the code is ready and waiting for when it does -->
             <span ng-bind="weather.icon"></span>
         </div>
-        <!--<div ui-sref-active="active" class="clearfix right" ng-if="!currentUser"><a id="signup" ui-sref="signup">sign up</a></div>--> <!-- I eventually plan to implement a signup feature -->
+        <!--<div ui-sref-active="active" class="clearfix right" ng-if="!currentUser"><a id="signup" ui-sref="signup">sign up</a></div>--> <!-- I don't wish to show the signup option in the nav menu yet -->
         <div id="loggedin" class="clearfix right bold displayWhenBig" ng-if="currentUser" ng-bind="currentUser.email + ' is logged in'">
         </div>
                             
     </header>
 
-	   <div ui-view></div> <!-- The main view goes here -->
+	   <div ui-view></div> <!-- The view goes here - set to the home view by default in the AppRoutes.js file -->
 
     <script type="text/javascript" src="libs/angular-cookies/angular-cookies.min.js"></script>
     <script type="text/javascript" src="libs/angular-messages/angular-messages.min.js"></script>

@@ -13,7 +13,7 @@
 		    <li class="list-group-item">Address: 1111 N. Main St.<br>Fresno, CA 93700</li>
 
 		    <li id="commentBox" class="list-group-item">
-		    	<form action="/contact" method="post" enctype="text/plain" name="commentForm">
+		    	<form action="/contact" method="post" enctype="text/plain" name="commentForm"> <!-- this will be set up with nodemail.js shortly so that it sends the comment to an email address via nodemail.js -->
 		    		<div>
 				    	<p id="commentRequest" class="left">Please send us a comment</p>
 				    	<button type="submit" class="btn-general btn-submit font-white right shadow">Submit</button>
@@ -24,7 +24,7 @@
 		  </ul>
 		</div>
 		<div id="mapBox" class="displayWhenBig panel-right right">
-			<ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+			<ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map> <!-- uses the Google Maps API to get a map - the map shown here is just a random map of downtown Fresno -->
 		</div>
 	  </div>
 	</div>

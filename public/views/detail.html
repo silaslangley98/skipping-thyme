@@ -1,11 +1,11 @@
-<div class = "homeContainer">
+<div class = "homeContainer"> <!-- this view shows details about a particular plant - the plant selected by the user when the "See Product Details" button is clicked -->
   	
         <div id = "plantImage">
-            <img ng-src="{{ plant.picture }}" alt = "{{plant.name}}"/>
+            <img ng-src="{{ plant.picture }}" alt = "{{plant.name}}"/> <!-- this is still within an ng-repeat of "plant in plants" on the home view, so it can access the plant object -->
         </div>
 
         <div id = "plantDescription">
-            <div class="alert alert-danger" ng-show="plant.inventory == 0"><strong>This item is currently unavailable</strong></div>
+            <div class="alert alert-danger" ng-show="plant.inventory == 0"><strong>This item is currently unavailable</strong></div> <!-- only show when the plant is not in stock -->
             <h2 ng-bind="plant.name"></h2>
             <p>Price: <span ng-bind="plant.price | currency"></span></p>
             <p ng-bind="plant.description"></p>

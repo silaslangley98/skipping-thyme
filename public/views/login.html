@@ -6,7 +6,7 @@
 
                 <div class="alert alert-{{alert.type}}">{{alert.message}}</div>
 
-                <form method="post" ng-submit="login()" name="loginForm">
+                <form method="post" ng-submit="login()" name="loginForm"> <!-- will call the login function in the login controller when the form is submited -->
 
                     <div class="form-group">
                         <input type="email" name="email" ng-model="email" class="form-control input-lg text-center"
@@ -14,8 +14,8 @@
                     </div>
 
                     <div class="help-block text-danger" ng-if="loginForm.email.$dirty"
-                         ng-messages="loginForm.email.$error">
-                        <div ng-message="required">Your email address is required.</div>
+                         ng-messages="loginForm.email.$error"> <!-- will only show if the user has already tried to input data on the email input above, i.e. when it is "dirty" --> <!-- The ng-messages directive watches the email.$error object which lists all the errors with the email entry, such as a missing email when an email is required or an invalid email. When the object changes, it looks for the first ng-message element below that applies and then displays its error message -->
+                        <div ng-message="required">Your email address is required.</div> <!-- ng-message provides the particular error message for the particular type of error -->
                         <div ng-message="email">Your email address is invalid.</div>
                     </div>
 
@@ -30,7 +30,7 @@
                         <div ng-message="required">Password is required.</div>
                     </div>
 
-                    <button type="submit" ng-disable="loginForm.$invalid" class="btn btn-lg btn-block btn-success">
+                    <button type="submit" ng-disable="loginForm.$invalid" class="btn btn-lg btn-block btn-success"> <!-- The submit button is disabled if the username or password are invaled -->
                         Sign In
                     </button>
                 </form>

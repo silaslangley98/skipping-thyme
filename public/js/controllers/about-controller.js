@@ -5,6 +5,9 @@
 
   app.controller('AboutController', function($scope){
       $scope.myInterval = 5000;
+
+      // Setting up the image array for the slides in the carousel in the about view
+      
       var slides = $scope.slides = [
         {
             image: 'images/floral_assembly.JPG'

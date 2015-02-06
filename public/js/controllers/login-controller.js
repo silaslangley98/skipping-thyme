@@ -33,12 +33,12 @@
             }, 3000);
         }
 
-        $scope.login = function() {
+        $scope.login = function() { // make the Auth Service login function available to the scope and pass in the email and password entered on the scope to the Auth Service login function
 
             AuthService.login({
                 email: $scope.email,
                 password: $scope.password
-            }, successCallback, errorCallback);
+            }, successCallback, errorCallback); // call the success or the error callback functions above when the login function is finished executing
 
         };
 

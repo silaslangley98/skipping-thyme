@@ -22,7 +22,7 @@
 
         $scope.logout = function() {
             AuthService.logout(successCallback);
-        };
+        }; // makes the Auth service logout function available to the scope
 
         $scope.getItemCount = CartService.getItemCount;
 
