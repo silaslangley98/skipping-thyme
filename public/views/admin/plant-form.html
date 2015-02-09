@@ -9,7 +9,7 @@
                 <form method="post" ng-submit="save()" name="plantForm">
 
                     <div class="form-group">
-                        <input type="text" name="name" class="form-control input-lg text-center" ng-model = "plant.name" placeholder="Enter the plant's name" require autofocus>
+                        <input type="text" name="name" class="form-control input-lg text-center" ng-model = "plant.name" placeholder="Enter the plant's name" required autofocus>
                     </div>
 
                     <div class="help-block text-danger" ng-if="plantForm.name.$dirty"
@@ -58,7 +58,7 @@
 
                     <div class="form-group">
                         <input type="text" name="sunAmount" class="form-control input-lg text-center"
-                               ng-model = "plant.amountOfSun" placeholder="Enter the plant's sun needs"required autofocus>
+                               ng-model = "plant.amountOfSun" placeholder="Enter the plant's sun needs" required autofocus>
                     </div>
 
                     <div class="help-block text-danger" ng-if="plantForm.amountOfSun.$dirty"

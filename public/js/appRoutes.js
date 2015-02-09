@@ -16,8 +16,7 @@
 			})
 
 			.state('cart', {
-				url: '/cart',
-				controller: 'CartController',			
+				url: '/cart',		
 				templateUrl: 'views/cart-view.html'
 			})
 
