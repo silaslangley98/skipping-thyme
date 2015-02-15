@@ -12,9 +12,9 @@
 
             $timeout(function() {
 
-                $state.go('login');
+                $state.go('login'); // goes to the login view three seconds after signing up
 
-                $scope.alert = undefined;
+                $scope.alert = undefined; // removes the success message after 3 seconds
 
             }, 3000);
         }
@@ -26,14 +26,13 @@
             };
 
             $timeout(function() {
-                $scope.alert = undefined;
+                $scope.alert = undefined; // removes the error message after 3 seconds
 
             }, 3000);
         }
 
-        $scope.signup = function() {
-            console.log($scope.email);
-            AuthService.signup({
+        $scope.signup = function() { // makes the signup function available to the scope
+            AuthService.signup({ // sends the email and the password inputted on the signup form to the AuthService which will send it to the database
                 email   : $scope.email,
                 password: $scope.password
             }, successCallback, errorCallback);

@@ -20,8 +20,22 @@
 			    	</div>
 			  		<textarea rows="4" class="form-control" placeholder="Comment here."></textarea>
 			  	</form>
+
 		    </li>
+
+		    <li id="chatBox" class="list-group-item">
+
+			    <ul id="messages" ng-repeat="message in messages">
+			    	<li ng-bind="message"></li>
+			    </ul>
+			    <form method="post" ng-submit="send()" name="chat-form">
+			      <input id="chat-input" ng-model="msg" autocomplete="off"><button type="submit">Send</button>
+			    </form>
+
+			</li>
+
 		  </ul>
+
 		</div>
 		<div id="mapBox" class="displayWhenBig panel-right right">
 			<ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map> <!-- uses the Google Maps API to get a map - the map shown here is just a random map of downtown Fresno -->

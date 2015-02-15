@@ -14,8 +14,8 @@ var express         = require('express'),
     LocalStrategy   = require('passport-local').Strategy,
     bcrypt          = require('bcrypt-nodejs'),
     http            = require('http'),
-    nodemailer      = require('nodemailer');   
-
+    nodemailer      = require('nodemailer');
+    
 require('./app/models/User.js');
 require('./app/models/Plant.js');
 
@@ -88,10 +88,31 @@ require('./app/admin-routes.js')(app);
 require('./app/routes.js')(app);
 
 // START APP
-app.listen(port); // at http://localhost: 9001
+
+var io = require('socket.io').listen(app.listen(port)); // the app is also started here -- the socket and the app need to be on the same port
+
+//app.listen(port); // at http://localhost: 9001
 
 // INFORM USER
 console.log("Leaves grow at " + port);
+
+// SOCKET
+
+app.get('/socket.io/socket.io.js', function(req, res) {
+  res.set('Content-Type', 'text/javascript');
+  res.sendfile('/socket.io/socket.io.js');
+});
+
+io.on('connection', function(socket){
+  console.log('a user connected');
+});
+
+io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    console.log('message: ' + msg);
+    io.emit('chat message', msg);
+  });
+});
 
 // EXPOSE APP
 
