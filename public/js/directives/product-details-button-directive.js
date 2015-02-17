@@ -5,9 +5,8 @@
 	app.directive('productDetailsButton', function(){
 		return {
 
-			scope: {
-				
-				plant: "="
+			scope: {				
+				plant: "=",
 			},
 
 			restrict: 'E',

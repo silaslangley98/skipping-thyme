@@ -26,11 +26,8 @@ module.exports = function(app) {
 
     router.route('/plants')
         .get(function(req, res) {
-            var filter = {
-                isActive: true
-            };
 
- 			Plant.find(filter, function(err, plants) {
+ 			Plant.find(function(err, plants) {
 				if (err)
 	                res.send(err);
 

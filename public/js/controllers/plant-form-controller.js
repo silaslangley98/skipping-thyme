@@ -42,7 +42,6 @@
 
         $scope.delete = function() {
             $scope.plant.$delete({ // sends a DELETE to '/api/admin/plants/:id'
-                id: $scope.user._id,
                 id: $scope.plant._id,
                 guid: $scope.plant.guid,
                 price: $scope.plant.price,
