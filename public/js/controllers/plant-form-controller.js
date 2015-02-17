@@ -19,12 +19,12 @@
         	};
         }
 
-        API.plant.get({id: $stateParams.id}, function(plant) { // $stateParams is an object containing keys and values in the url -- here the object's id key is selected from the url so that the value, i.e. the id, of the plant being edited can be used to retrieve that plant's data from the database via the API service
+        API.plant.get({id: $stateParams.id}, function(plant) { // $stateParams is an object containing keys and values in the url -- here the object's id key is selected from the url so that the value, i.e. the id, of the plant being edited can be used to retrieve that plant's data from '/api/admin/plants/:id' via the API service
             $scope.plant = plant; // puts the plant's data on the scope so that it already displays on the plant-update form in the view 
         });
 
         $scope.save = function() {
-            $scope.plant.$save({ // saving the plant data that has been updatted in the plant-update form in the view
+            $scope.plant.$save({ // saving the plant data that has been updatted in the plant-update form in the view -- sends a POST to '/api/admin/plants/:id'
                 id: $scope.plant._id,
                 guid: $scope.plant.guid,
                 price: $scope.plant.price,
@@ -41,7 +41,8 @@
         };
 
         $scope.delete = function() {
-            $scope.plant.$delete({ // deletes all the plant's data, removing it from the database
+            $scope.plant.$delete({ // sends a DELETE to '/api/admin/plants/:id'
+                id: $scope.user._id,
                 id: $scope.plant._id,
                 guid: $scope.plant.guid,
                 price: $scope.plant.price,

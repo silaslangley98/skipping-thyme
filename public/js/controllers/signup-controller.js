@@ -12,7 +12,7 @@
 
             $timeout(function() {
 
-                $state.go('login'); // goes to the login view three seconds after signing up
+                $state.go('login'); // on success, goes to the login view after three seconds
 
                 $scope.alert = undefined; // removes the success message after 3 seconds
 

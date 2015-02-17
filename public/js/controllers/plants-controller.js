@@ -39,7 +39,7 @@
         $scope.addPlant = function() { //makes the addPlant function available to the scope -- it is called from the add-plant input form in the plants view
             AddPlantService.addPlant({
                 name : $scope.formInfo.name, // sends the plant name inputted on the add-plant form in the view to the Add Plant Service which will send it to the database
-            }, successCallback, errorCallback);
+            }, successCallback, errorCallback); // pass in the above successCallback and error Callback functions to the Add Plant Service "Add Plant" function
         };
 		
 	});

@@ -19,12 +19,12 @@
         	};
         }
 
-        API.user.get({id: $stateParams.id}, function(user) { // grabs the user's id from the url via the $stateParams service and then uses that id to get that user's data from the database via the API service
+        API.user.get({id: $stateParams.id}, function(user) { // grabs the user's id from the url via the $stateParams service and then uses that id to get that user's data from '/api/admin/users/:id' via the API service
             $scope.user = user; // sets the user on the scope to the user with the id grabbed from the url -- so that now the user-form will display the user's information
         });
 
         $scope.save = function() {
-            $scope.user.$save({ // saving the user data that has been updatted in the user-form
+            $scope.user.$save({ // saving the user data that has been updatted in the user-form -- sends a POST to '/api/admin/users/:id'
                 id: $scope.user._id,
                 firstName: $scope.user.firstName,
                 lastName: $scope.user.lastName,
@@ -35,7 +35,7 @@
         };
 
         $scope.delete = function() {
-            $scope.user.$delete({ // deleting all the user data from the database
+            $scope.user.$delete({ // sends a DELETE to '/api/admin/users/:id'
                 id: $scope.user._id,
                 firstName: $scope.user.firstName,
                 lastName: $scope.user.lastName,
