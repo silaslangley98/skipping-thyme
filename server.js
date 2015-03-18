@@ -21,23 +21,23 @@ require('./app/models/Plant.js');
 
 // CONFIGURATION
 
-var port = process.env.PORT || 9001;
+var port = process.env.PORT || 9001; // make the app listen on the PORT environment variable or on port 9001 if there isn't one
 
-var mongodbUri = 'mongodb://basil:mint@ds063870.mongolab.com:63870/nursery-plants';
+var mongodbUri = 'mongodb://basil:mint@ds063870.mongolab.com:63870/nursery-plants'; // assign the 'nursery-plants' database's Uri to a variable
 
-var mongooseUri = uriUtil.formatMongoose(mongodbUri);
+var mongooseUri = uriUtil.formatMongoose(mongodbUri); // Convert mongodb's connection string format to a format Mongoose understands
 
-mongoose.connect(mongooseUri);
+mongoose.connect(mongooseUri); // open a connection to the database
 
-// REGISTER MODULES
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser());
+// REGISTER MODULES -- setting up the middleware
+app.use(logger('dev')); //middleware that logs to the console information about requests and responses
+app.use(bodyParser.json()); // middleware that parses JSON text and stores it in the 'body' property of the 'request' object
+app.use(bodyParser.urlencoded({ extended: true })); // middleware that parses url-encoded text and stores it in the 'body' property of the 'request' object
+app.use(cookieParser()); // middleware that parses request cookies and puts them into req.cookies
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public')); // serves up static content from the app's 'public' directory -- this makes it possible for the browser to access almost anything from the 'public' directory
 
-app.use(session({ 
+app.use(session({  // this middleware is necessary to create a persistent login session
     secret: 'SECRET',
     saveUninitialized: true,
     resave: true }));   

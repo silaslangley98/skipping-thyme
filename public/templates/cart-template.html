@@ -5,7 +5,7 @@
 				<thead>
 					<tr>
 						<th class = "text-center">Plant</th>
-						<th class = "text-center">#</th>
+						<th class = "text-center">Amt.</th>
 						<th class = "text-center">Price</th>
 						<th class = "text-center">Total</th>
 						<th>&nbsp;</th>
@@ -17,8 +17,8 @@
 						<td class="col-sm-1 col-md-1 text-center" ng-bind="item.quantity"></td>
 						<td class="col-sm-1 col-md-1 text-center">{{item.price | currency}}</td>
 						<td class="col-sm-1 col-md-1 text-center">{{item.price * item.quantity | currency}}</td>
-						<td class="col-sm-1 col-md-1">
-                            <button type="button" class="btn-remove btn-general btn-longer font-white shadow nowrap-fix" ng-click="removeItem(item.guid)">
+						<td class="col-sm-2 col-md-2">
+                            <button type="button" class="btn-remove btn-general btn-longer btn-min font-white shadow nowrap-fix" ng-click="removeItem(item.guid)">
                                 <i class="glyphicon glyphicon-remove"></i> Remove
                             </button>
                         </td>
@@ -34,8 +34,8 @@
 						<td class="col-sm-1 col-md-1 text-center">
 							<strong>{{cartTotal() | currency}}</strong>
 						</td>
-						<td class="col-sm-1 col-md-1">
-							<button type="button" class="btn-general btn-remove btn-longer font-white shadow nowrap-fix" ng-click="emptyCart(); resetCart()">
+						<td class="col-sm-2 col-md-2">
+							<button type="button" class="btn-general btn-remove btn-longer btn-min font-white shadow nowrap-fix" ng-click="emptyCart(); resetCart()">
 						        <i class="glyphicon glyphicon-remove"></i> Empty Cart
 						    </button>
 						</td>
