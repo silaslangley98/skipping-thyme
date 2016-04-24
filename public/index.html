@@ -61,14 +61,16 @@
 
         <div id="temps" class="clearfix left bold displayWhenBig" ng-controller = "WeatherController"> <!-- grabs weather data from openweathermap.org. Unfortunately their data is not always reliable. The problem is on their end, not on mine -->
 
+            <p ng-bind="weather.location"></p>
+
             <p>Currently: <span ng-bind="weather.temp.current | number:0"></span>&#8457</p>
-            <p ng-if="weather.temp.high > -70">High: <span ng-bind="weather.temp.high | number:0"></span>&#8457</p> <!-- sometimes the data for the high and low temps are blatantly wrong - with low low temps - I will not display the data if the temps are obviously too low -->
+
+            <p><span ng-bind="weather.description"></span></p>
+
+            <p ng-if="weather.temp.high > -70">Forecast-- High: <span ng-bind="weather.temp.high | number:0"></span>&#8457</p> <!-- sometimes the data for the high and low temps are blatantly wrong - with low low temps - I will not display the data if the temps are obviously too low -->
 
             <p ng-if="weather.temp.low > -70">Low: <span ng-bind="weather.temp.low | number:0"></span>&#8457</p>
 
-            <p><span ng-bind="weather.description"></span></p> <!-- currently openweathermap.org isn't providing the data for Fresno, CA for the description and the icon - but the code is ready and waiting for when it does -->
-
-            <span ng-bind="weather.icon"></span>
         </div>
 
         <!--<div ui-sref-active="active" class="clearfix right" ng-if="!currentUser"><a id="signup" ui-sref="signup">sign up</a></div>--> <!-- I don't wish to show the signup option in the nav menu yet -->

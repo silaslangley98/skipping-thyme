@@ -8,31 +8,27 @@
 		return {
 
 			getWeather: function() {
-				var weather = {temp: {}, description: null, icon: null};
-				var city = "fresno,us";
-				var url1 = "http://api.openweathermap.org/data/2.5/weather?q=";
-				var url2 = "&units=imperial&callback=JSON_CALLBACK";
-				var forecastUrl = "http://api.openweathermap.org/data/2.5/forecast/daily?q=";
+				var weather     = {temp: {}, description: null, icon: null};
+				var city_id     = "5350964"; // " id for fresno.us"
+				var url1        = "http://api.openweathermap.org/data/2.5/";
+				var url2        = "&units=imperial&callback=JSON_CALLBACK&APPID=";
+				var API_key     = "7e77d9dbd50e905463e578dfff57f079";
+
 				$http({
-						method: 'JSONP',
-						url: url1 + city + url2
-						//  "http://api.openweathermap.org/data/2.5/weather?q=fresno,us&units=imperial&callback=JSON_CALLBACK"						
+						method : 'JSONP',
+						url    : url1 + "weather?id=" + city_id + url2 + API_key					
 					}).success(function(data) {
 						weather.temp.current = data.main.temp;
-						console.log(data.weather);
-						weather.description = data.weather.description;
-						weather.icon = data.weather.icon;
-						console.log(weather.description);
-						console.log(weather.icon);
-						console.log(weather.temp.current);
+						weather.description  = data.weather[0].description;
+						weather.location     = data.name;
 					});
 
 				$http({
-						method: 'JSONP',
-						url: forecastUrl + city + url2
+						method : 'JSONP',
+						url    : url1 + "forecast/daily?id=" + city_id + url2 + API_key
 					}).success(function(data) {
 						weather.temp.high = data.list[0].temp.max;
-						weather.temp.low = data.list[0].temp.min;
+						weather.temp.low  = data.list[0].temp.min;
 					});
 
 				return weather;
@@ -43,4 +39,3 @@
     });
  
 })(window.angular);
-
