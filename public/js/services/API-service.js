@@ -20,6 +20,7 @@
             login: $resource('/api/login'),
 
             logout: $resource('/api/logout')
+
         };
 
     });

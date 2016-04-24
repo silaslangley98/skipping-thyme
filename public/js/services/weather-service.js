@@ -11,7 +11,7 @@
 				var weather     = {temp: {}, description: null, icon: null};
 				var city_id     = "5350964"; // " id for fresno.us"
 				var url1        = "http://api.openweathermap.org/data/2.5/";
-				var url2        = "&units=imperial&callback=JSON_CALLBACK&APPID=";
+				var url2        = "&units=imperial&callback=JSON_CALLBACK&APPID=";				
 				var API_key     = "7e77d9dbd50e905463e578dfff57f079";
 
 				$http({
